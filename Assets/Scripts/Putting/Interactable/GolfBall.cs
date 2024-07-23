@@ -15,7 +15,6 @@ namespace Minigolf.Putting.Interactable
         public UnityAction onBallHit;
 
 
-
         private void OnCollisionEnter(Collision other)
         {
             if (canBeHit && other.transform.TryGetComponent<GolfPutter>(out GolfPutter putter) && putter.IsHeld)
