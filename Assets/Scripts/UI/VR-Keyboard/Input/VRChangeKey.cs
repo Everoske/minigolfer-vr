@@ -8,14 +8,16 @@ namespace Minigolf.UI.Keyboard.Input
     public class VRChangeKey : VRKey
     {
         [SerializeField]
-        private GameObject parentGroup;
+        private VRKeyPage parentPage;
         [SerializeField]
-        private GameObject targetGroup;
+        private VRKeyPage targetPage;
+
+
 
         protected override void HandleClicked()
         {
-            parentGroup.SetActive(false);
-            targetGroup.SetActive(true);
+            parentPage.ClosePage();
+            targetPage.OpenPage();
         }
     }
 }

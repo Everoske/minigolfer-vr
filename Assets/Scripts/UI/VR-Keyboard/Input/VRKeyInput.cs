@@ -8,7 +8,6 @@ namespace Minigolf.UI.Keyboard.Input
 {
     public class VRKeyInput : VRKey
     {
-        [SerializeField]
         private string inputValue;
 
         public UnityAction<string> onKeyPressed;
@@ -16,7 +15,7 @@ namespace Minigolf.UI.Keyboard.Input
         protected override void Awake()
         {
             base.Awake();
-            inputValue = GetComponentInChildren<TextMeshProUGUI>().text;
+            inputValue = buttonText;
         }
 
         protected override void HandleClicked()
