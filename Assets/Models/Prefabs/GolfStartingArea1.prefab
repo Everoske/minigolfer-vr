@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4357114407165861520
+--- !u!1 &5086733275090901232
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2160800026925594634}
-  - component: {fileID: 902038749358090285}
-  - component: {fileID: 5205491659648301230}
-  - component: {fileID: 5756798817362438831}
-  - component: {fileID: 6735618790840162820}
+  - component: {fileID: 4398138400279788346}
+  - component: {fileID: 2421421994409634855}
+  - component: {fileID: 7919461306819629419}
+  - component: {fileID: 7770955929088735848}
   m_Layer: 0
-  m_Name: Putter
+  m_Name: GolfStartingArea1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2160800026925594634
+--- !u!4 &4398138400279788346
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4357114407165861520}
+  m_GameObject: {fileID: 5086733275090901232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -35,21 +34,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &902038749358090285
+--- !u!33 &2421421994409634855
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4357114407165861520}
-  m_Mesh: {fileID: 5699167827763708033, guid: d1d6aa909f7640e429135c0b330132d7, type: 3}
---- !u!23 &5205491659648301230
+  m_GameObject: {fileID: 5086733275090901232}
+  m_Mesh: {fileID: 870993614411247190, guid: d1f8110e2d79a4e4ba41fd584c5f691f, type: 3}
+--- !u!23 &7919461306819629419
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4357114407165861520}
+  m_GameObject: {fileID: 5086733275090901232}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,8 +62,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1762740672601341812, guid: d1d6aa909f7640e429135c0b330132d7, type: 3}
-  - {fileID: -461184467618855209, guid: d1d6aa909f7640e429135c0b330132d7, type: 3}
+  - {fileID: -4770390735465466038, guid: d1f8110e2d79a4e4ba41fd584c5f691f, type: 3}
+  - {fileID: -5259448289082180168, guid: d1f8110e2d79a4e4ba41fd584c5f691f, type: 3}
+  - {fileID: -4423240917494749552, guid: d1f8110e2d79a4e4ba41fd584c5f691f, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,13 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5756798817362438831
-BoxCollider:
+--- !u!64 &7770955929088735848
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4357114407165861520}
+  m_GameObject: {fileID: 5086733275090901232}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -104,27 +104,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.04, y: 0.725, z: 0.026979646}
-  m_Center: {x: -0.0013353825, y: 0, z: 0}
---- !u!65 &6735618790840162820
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4357114407165861520}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.10811964, y: 0.05, z: 0.026979646}
-  m_Center: {x: -0.0013353825, y: -0.38, z: 0}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 870993614411247190, guid: d1f8110e2d79a4e4ba41fd584c5f691f, type: 3}
