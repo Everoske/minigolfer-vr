@@ -15,6 +15,12 @@ namespace Minigolf.Putting.Game
         [SerializeField]
         private PuttingScore puttingScore;
 
+        [SerializeField]
+        private GameObject endScreenUI;
+
+        [SerializeField]
+        private TeleportPlayer endGameTeleport;
+
         private int currentIndex = 0;
 
         private bool hasStarted = false;
@@ -25,7 +31,6 @@ namespace Minigolf.Putting.Game
         private void Start()
         {
             puttingScore.CreateCards(puttingAreas);
-            StartPuttingGame();
         }
 
         private void OnDisable()
@@ -88,6 +93,8 @@ namespace Minigolf.Putting.Game
             puttingPlayer.PlayerGolfBall.onBallHit -= HandleBallHit;
             hasStarted = false;
             Debug.Log("Putting game complete!");
+            endScreenUI.SetActive(true);
+            endGameTeleport.Teleport();    
         }
 
         private bool CurrentHoleHasStarted()
@@ -120,6 +127,5 @@ namespace Minigolf.Putting.Game
                 puttingScore.IncrementCardHits();
             }
         }
-
     }
 }
