@@ -54942,6 +54942,7 @@ MonoBehaviour:
   putterPrefab: {fileID: 1763247120096713403, guid: 186d962c7a61c3d4faf5803c94fd1c43,
     type: 3}
   rDirectInteractor: {fileID: 32138335}
+  lDirectInteractor: {fileID: 1787505986}
   rightGripPressed:
     m_Name: Right Grip Pressed
     m_Type: 0
@@ -54957,6 +54958,23 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Right Grip Pressed
+      m_Flags: 0
+    m_Flags: 0
+  leftGripPressed:
+    m_Name: Left Grip Pressed
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bd0892c7-bb8f-4ceb-9322-f4cedd748e9f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b9ae9d88-a15a-4130-8a4d-95a27f52e0db
+      m_Path: <XRController>{LeftHand}/gripPressed
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left Grip Pressed
       m_Flags: 0
     m_Flags: 0
 --- !u!1 &1315218641 stripped
