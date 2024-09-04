@@ -27,6 +27,17 @@ namespace Minigolf.Putting.Game
 
         private GolfPutter spawnedPutter;
 
+        // IMPORTANT: PLEASE READ!!!
+        // Problems and Suggestions:
+        // - Problems:
+        // --> If player uses the ray interactor to teleport, the golf putter spawns and stays in the player's hand even after the grip button is released
+        // - Suggestions:
+        // --> Implement a PlayerInteractController class to manage player interactors
+        // --> Make it so the player cannot spawn a golf putter when using the ray interactor or not using the direct interactor
+        // --> Putter should disappear when teleporting or when the ray interactor is called
+        // --> Simplify code as much as possible
+        // --> Make it so the GolfPutter class is used for the prefab. Make the Grab Interactable of the GolfPutter publically accessible
+
         private void Awake()
         {
             rightGripPressed.Enable();
@@ -88,16 +99,5 @@ namespace Minigolf.Putting.Game
 
             SpawnPutter(lDirectInteractor);
         }
-
-
-        // Player Hits Select Button on XR Controller:
-        // Player Holding Something => return;
-        // Player is Already Holding Putter in Other Hand => return;
-        // Player is Hovering Over and Interactable Object => return;
-
-        // Instantiate Putter Prefab in Player Hand
-
-        // In Putter Script:
-        // If released by player, despawn after a set period of time.
     }
 }
