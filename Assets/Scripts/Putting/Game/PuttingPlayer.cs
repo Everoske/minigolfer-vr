@@ -11,7 +11,6 @@ namespace Minigolf.Putting.Game
         private XRInteractionManager interactionManager;
         [SerializeField]
         private GolfBall playerGolfBall;
-        // Consider making it so the GolfPutter class can be used to access its Grab Interactable class
         [SerializeField]
         private GolfPutter putterPrefab;
 
@@ -29,7 +28,7 @@ namespace Minigolf.Putting.Game
 
         public GolfBall PlayerGolfBall => playerGolfBall;
 
-        public GolfPutter spawnedPutter;
+        private GolfPutter spawnedPutter;
 
         private void Awake()
         {
