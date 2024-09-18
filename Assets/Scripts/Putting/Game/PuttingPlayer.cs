@@ -19,6 +19,8 @@ namespace Minigolf.Putting.Game
         private XRDirectInteractor rDirectInteractor;
         [SerializeField]
         private XRDirectInteractor lDirectInteractor;
+        [SerializeField]
+        private XRRayInteractor teleportInteractor;
         
         [SerializeField]
         private InputAction rightGripPressed;
@@ -34,8 +36,6 @@ namespace Minigolf.Putting.Game
         // - Problems:
         // --> If player uses the ray interactor to teleport, the golf putter spawns and stays in the player's hand even after the grip button is released
         // - Suggestions:
-        // --> Implement a PlayerInteractController class to manage player interactors
-        // --> Make it so the player cannot spawn a golf putter when using the ray interactor or not using the direct interactor
         // --> Putter should disappear when teleporting or when the ray interactor is called
         // --> Simplify code as much as possible
         // --> Make it so the GolfPutter class is used for the prefab. Make the Grab Interactable of the GolfPutter publically accessible
@@ -65,7 +65,12 @@ namespace Minigolf.Putting.Game
             if (!rDirectInteractor.hasSelection ||  !lDirectInteractor.hasSelection)
             {
                 PutterReleased();
-            } 
+            }
+
+            if (teleportInteractor.isActiveAndEnabled && spawnedPutter != null)
+            {
+                DespawnPutter();
+            }
         }
 
         private void SpawnPutter(IXRSelectInteractor handInteractor)
@@ -82,6 +87,11 @@ namespace Minigolf.Putting.Game
             if (spawnedPutter == null) return;
             if (spawnedPutter.IsSelected()) return;
 
+            DespawnPutter();
+        }
+
+        private void DespawnPutter()
+        {
             spawnedPutter.DespawnPutter();
             spawnedPutter = null;
         }
@@ -90,6 +100,7 @@ namespace Minigolf.Putting.Game
         {
             if (rDirectInteractor.hasHover) return;
             if (rDirectInteractor.hasSelection) return;
+            if (teleportInteractor.isActiveAndEnabled) return;
 
             SpawnPutter(rDirectInteractor);
         }
@@ -98,6 +109,7 @@ namespace Minigolf.Putting.Game
         {
             if (lDirectInteractor.hasHover) return;
             if (lDirectInteractor.hasSelection) return;
+            if (teleportInteractor.isActiveAndEnabled) return;
 
             SpawnPutter(lDirectInteractor);
         }
