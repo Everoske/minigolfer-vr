@@ -14,10 +14,12 @@ namespace Minigolf.Putting.Game
         // Consider making it so the GolfPutter class can be used to access its Grab Interactable class
         [SerializeField]
         private XRGrabInteractable putterPrefab;
+
         [SerializeField]
         private XRDirectInteractor rDirectInteractor;
         [SerializeField]
         private XRDirectInteractor lDirectInteractor;
+        
         [SerializeField]
         private InputAction rightGripPressed;
         [SerializeField]
@@ -25,7 +27,7 @@ namespace Minigolf.Putting.Game
 
         public GolfBall PlayerGolfBall => playerGolfBall;
 
-        private GolfPutter spawnedPutter;
+        public GolfPutter spawnedPutter;
 
         // IMPORTANT: PLEASE READ!!!
         // Problems and Suggestions:
