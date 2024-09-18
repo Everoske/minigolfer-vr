@@ -18,6 +18,8 @@ namespace Minigolf.Putting.Interactable
             set => isHeld = value;
         }
 
+        public XRGrabInteractable PutterInteractable => putterInteractable;
+
         private void Awake()
         {
             putterInteractable = GetComponent<XRGrabInteractable>();

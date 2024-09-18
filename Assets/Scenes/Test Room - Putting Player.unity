@@ -4358,10 +4358,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionManager: {fileID: 636642543}
   playerGolfBall: {fileID: 0}
-  putterPrefab: {fileID: 1763247120096713403, guid: 186d962c7a61c3d4faf5803c94fd1c43,
+  putterPrefab: {fileID: 3979418456399677145, guid: 186d962c7a61c3d4faf5803c94fd1c43,
     type: 3}
   rDirectInteractor: {fileID: 1043630068}
   lDirectInteractor: {fileID: 1116804079}
+  teleportInteractor: {fileID: 1613730463}
   rightGripPressed:
     m_Name: Right Grip Pressed
     m_Type: 0

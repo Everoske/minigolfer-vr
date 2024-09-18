@@ -13,7 +13,7 @@ namespace Minigolf.Putting.Game
         private GolfBall playerGolfBall;
         // Consider making it so the GolfPutter class can be used to access its Grab Interactable class
         [SerializeField]
-        private XRGrabInteractable putterPrefab;
+        private GolfPutter putterPrefab;
 
         [SerializeField]
         private XRDirectInteractor rDirectInteractor;
@@ -30,15 +30,6 @@ namespace Minigolf.Putting.Game
         public GolfBall PlayerGolfBall => playerGolfBall;
 
         public GolfPutter spawnedPutter;
-
-        // IMPORTANT: PLEASE READ!!!
-        // Problems and Suggestions:
-        // - Problems:
-        // --> If player uses the ray interactor to teleport, the golf putter spawns and stays in the player's hand even after the grip button is released
-        // - Suggestions:
-        // --> Putter should disappear when teleporting or when the ray interactor is called
-        // --> Simplify code as much as possible
-        // --> Make it so the GolfPutter class is used for the prefab. Make the Grab Interactable of the GolfPutter publically accessible
 
         private void Awake()
         {
@@ -77,9 +68,8 @@ namespace Minigolf.Putting.Game
         {
             if (spawnedPutter != null) return;
 
-            XRGrabInteractable putterInteractable = Instantiate(putterPrefab, handInteractor.transform.position, handInteractor.transform.rotation);
-            spawnedPutter = putterInteractable.GetComponent<GolfPutter>();
-            interactionManager.SelectEnter(handInteractor, putterInteractable);
+            spawnedPutter = Instantiate(putterPrefab, handInteractor.transform.position, handInteractor.transform.rotation);
+            interactionManager.SelectEnter(handInteractor, spawnedPutter.PutterInteractable);
         }
 
         private void PutterReleased()
