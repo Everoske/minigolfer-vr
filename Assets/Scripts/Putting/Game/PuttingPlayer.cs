@@ -9,8 +9,7 @@ namespace Minigolf.Putting.Game
     {
         [SerializeField]
         private XRInteractionManager interactionManager;
-        [SerializeField]
-        private GolfBall playerGolfBall;
+
         [SerializeField]
         private GolfPutter putterPrefab;
 
@@ -25,8 +24,6 @@ namespace Minigolf.Putting.Game
         private InputAction rightGripPressed;
         [SerializeField]
         private InputAction leftGripPressed;
-
-        public GolfBall PlayerGolfBall => playerGolfBall;
 
         private GolfPutter spawnedPutter;
 

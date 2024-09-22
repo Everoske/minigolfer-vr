@@ -10,16 +10,10 @@ namespace Minigolf.Putting.Game
         private PuttingArea[] puttingAreas;
 
         [SerializeField]
-        private PuttingPlayer puttingPlayer;
-
-        [SerializeField]
         private PuttingScore puttingScore;
 
         [SerializeField]
         private GameObject endScreenUI;
-
-        [SerializeField]
-        private TeleportPlayer endGameTeleport;
 
         private int currentIndex = 0;
 
@@ -27,6 +21,18 @@ namespace Minigolf.Putting.Game
 
         private bool allowFirstHit = false;
 
+        /*
+         * TODO: This will become a private variable later on.
+         * The player will select the color of Golf Ball before starting the game.
+         * Once they confirm their selection, that ball's prefab will be assigned 
+         * here which will be spawned for each putting area
+         */
+        [SerializeField]
+        private GolfBall golfBallPrefab;
+
+        // Only one instance of this should exist at one time
+        // Each time a hole is activated, this ball should spawn at the new hole
+        private GolfBall playerGolfBall;
 
         private void Start()
         {
@@ -35,7 +41,7 @@ namespace Minigolf.Putting.Game
 
         private void OnDisable()
         {
-            puttingPlayer.PlayerGolfBall.onBallHit -= HandleBallHit;
+            playerGolfBall.onBallHit -= HandleBallHit;
             if (hasStarted && currentIndex < puttingAreas.Length)
             {
                 puttingAreas[currentIndex].StartingArea.onLeftStartingArea -= StartCurrentHole;
@@ -52,11 +58,11 @@ namespace Minigolf.Putting.Game
 
         public void StartPuttingGame()
         {
-            if (puttingAreas.Length <= 0) return;
+            if (puttingAreas.Length <= 0 || hasStarted) return;
 
             Debug.Log("Starting Putting Game");
 
-            puttingPlayer.PlayerGolfBall.onBallHit += HandleBallHit;
+            playerGolfBall.onBallHit += HandleBallHit;
             
             currentIndex = 0;
             puttingScore.StartNewPuttingGame();
@@ -84,17 +90,17 @@ namespace Minigolf.Putting.Game
             puttingAreas[currentIndex].ActivatePuttingArea();
             puttingAreas[currentIndex].StartingArea.onLeftStartingArea += StartCurrentHole;
             puttingAreas[currentIndex].Hole.onHoleComplete += CompleteHole;
+            // Teleport ball
             Debug.Log($"Hole {currentIndex + 1} is active!");
             
         }
 
         private void EndPuttingGame()
         {
-            puttingPlayer.PlayerGolfBall.onBallHit -= HandleBallHit;
+            //puttingPlayer.PlayerGolfBall.onBallHit -= HandleBallHit;
             hasStarted = false;
             Debug.Log("Putting game complete!");
-            endScreenUI.SetActive(true);
-            endGameTeleport.Teleport();    
+            endScreenUI.SetActive(true);  
         }
 
         private bool CurrentHoleHasStarted()

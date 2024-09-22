@@ -17,7 +17,7 @@ namespace Minigolf.Putting.Interactable
 
         private void OnCollisionEnter(Collision other)
         {
-            if (canBeHit && other.transform.TryGetComponent<GolfPutter>(out GolfPutter putter) && putter.IsHeld)
+            if (canBeHit && other.transform.TryGetComponent<GolfPutter>(out GolfPutter putter))
             {
                 canBeHit = false;
                 StartCoroutine(CanBeHitAgainCounter());

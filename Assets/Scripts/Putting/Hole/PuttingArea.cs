@@ -41,9 +41,7 @@ namespace Minigolf.Putting.Hole
         {
             isActive = true;
             hasStarted = false;
-            // teleportBall;
-            areaStartTeleport.Teleport();
-            areaStartTeleport.gameObject.SetActive(false);
+            //areaStartTeleport.gameObject.SetActive(false);
         }
     }
 }

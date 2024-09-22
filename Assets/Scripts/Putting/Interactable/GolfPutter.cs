@@ -8,15 +8,7 @@ namespace Minigolf.Putting.Interactable
     [RequireComponent(typeof(XRGrabInteractable))]
     public class GolfPutter : MonoBehaviour
     {
-        private bool isHeld = false;
-
         private XRGrabInteractable putterInteractable;
-
-        public bool IsHeld
-        {
-            get => isHeld;
-            set => isHeld = value;
-        }
 
         public XRGrabInteractable PutterInteractable => putterInteractable;
 
