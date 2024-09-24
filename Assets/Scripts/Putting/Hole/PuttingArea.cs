@@ -16,9 +16,6 @@ namespace Minigolf.Putting.Hole
         [SerializeField]
         private StartingArea startingArea;
 
-        [SerializeField]
-        private TeleportPlayer areaStartTeleport;
-
         public int Par => holePar;
 
         public PuttingHole Hole => hole;
@@ -41,7 +38,6 @@ namespace Minigolf.Putting.Hole
         {
             isActive = true;
             hasStarted = false;
-            //areaStartTeleport.gameObject.SetActive(false);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Minigolf.Putting.Game
 
         // Only one instance of this should exist at one time
         // Each time a hole is activated, this ball should spawn at the new hole
-        private GolfBall playerGolfBall;
+        private GolfBall playerGolfBall = null;
 
         private void Start()
         {
@@ -41,7 +41,7 @@ namespace Minigolf.Putting.Game
 
         private void OnDisable()
         {
-            playerGolfBall.onBallHit -= HandleBallHit;
+            DespawnBall();
             if (hasStarted && currentIndex < puttingAreas.Length)
             {
                 puttingAreas[currentIndex].StartingArea.onLeftStartingArea -= StartCurrentHole;
@@ -62,12 +62,10 @@ namespace Minigolf.Putting.Game
 
             Debug.Log("Starting Putting Game");
 
-            playerGolfBall.onBallHit += HandleBallHit;
-            
+            hasStarted = true;
             currentIndex = 0;
             puttingScore.StartNewPuttingGame();
             ActivateCurrentHole();
-            hasStarted = true;
         }
 
         public void MoveToNextHole()
@@ -90,14 +88,15 @@ namespace Minigolf.Putting.Game
             puttingAreas[currentIndex].ActivatePuttingArea();
             puttingAreas[currentIndex].StartingArea.onLeftStartingArea += StartCurrentHole;
             puttingAreas[currentIndex].Hole.onHoleComplete += CompleteHole;
-            // Teleport ball
+            SpawnBall(puttingAreas[currentIndex].StartingArea.BallSpawn);
+
             Debug.Log($"Hole {currentIndex + 1} is active!");
             
         }
 
         private void EndPuttingGame()
         {
-            //puttingPlayer.PlayerGolfBall.onBallHit -= HandleBallHit;
+            DespawnBall();
             hasStarted = false;
             Debug.Log("Putting game complete!");
             endScreenUI.SetActive(true);  
@@ -123,6 +122,7 @@ namespace Minigolf.Putting.Game
             }
         }
 
+        // This can be moved into the Putting Area script
         private void StartCurrentHole()
         {
             if (allowFirstHit)
@@ -132,6 +132,29 @@ namespace Minigolf.Putting.Game
                 puttingAreas[currentIndex].StartHole();
                 puttingScore.IncrementCardHits();
             }
+        }
+
+        private void DespawnBall()
+        {
+            if (playerGolfBall == null) return;
+
+            playerGolfBall.onBallHit -= HandleBallHit;
+
+            Destroy(playerGolfBall.gameObject);
+            playerGolfBall = null;
+        }
+
+        public void SpawnBall(Vector3 position)
+        {
+            if (!hasStarted) return;
+
+            if (playerGolfBall != null)
+            {
+                DespawnBall();
+            }
+
+            playerGolfBall = Instantiate(golfBallPrefab, position, Quaternion.identity);
+            playerGolfBall.onBallHit += HandleBallHit;
         }
     }
 }

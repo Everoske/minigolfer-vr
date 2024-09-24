@@ -10,6 +10,25 @@ namespace Minigolf.Putting.Hole
     {
         public UnityAction onLeftStartingArea;
 
+        public Vector3 BallSpawn
+        {
+            get => ballSpawn;
+        }
+        private Vector3 ballSpawn;
+
+        private void Awake()
+        {
+            Transform spawnTransform = GetComponentInChildren<Transform>();
+            if (ballSpawn != null )
+            {
+                ballSpawn = spawnTransform.position;
+            }
+            else
+            {
+                ballSpawn = transform.position;
+            }
+        }
+
         private void OnTriggerExit(Collider other)
         {
             if (other.TryGetComponent<GolfBall>(out GolfBall ball))
