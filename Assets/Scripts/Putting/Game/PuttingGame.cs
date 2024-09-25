@@ -15,6 +15,12 @@ namespace Minigolf.Putting.Game
         [SerializeField]
         private GameObject endScreenUI;
 
+        [SerializeField]
+        private GameObject startButton;
+
+        [SerializeField]
+        private GameObject restartButton;
+
         private int currentIndex = 0;
 
         private bool hasStarted = false;
@@ -61,8 +67,23 @@ namespace Minigolf.Putting.Game
             hasStarted = true;
             currentIndex = 0;
             puttingScore.StartNewPuttingGame();
+
             endScreenUI.SetActive(false);
+            startButton.SetActive(false);
+            restartButton.SetActive(true);
+
             ActivateCurrentHole();
+        }
+
+        public void RestartPuttingGame()
+        {
+            if (!hasStarted) return;
+
+            DeactivateCurrentHole();
+            DespawnBall();
+
+            hasStarted = false;
+            StartPuttingGame();
         }
 
         private void MoveToNextHole()
@@ -86,14 +107,26 @@ namespace Minigolf.Putting.Game
             puttingAreas[currentIndex].StartingArea.onLeftStartingArea += StartCurrentHole;
             puttingAreas[currentIndex].Hole.onHoleComplete += CompleteHole;
             SpawnBall(puttingAreas[currentIndex].StartingArea.BallSpawn);
-            
+        }
+
+        private void DeactivateCurrentHole()
+        {
+            if (!CurrentHoleHasStarted())
+            {
+                puttingAreas[currentIndex].StartingArea.onLeftStartingArea -= StartCurrentHole;
+            }
+
+            puttingAreas[currentIndex].Hole.onHoleComplete -= CompleteHole;
         }
 
         private void EndPuttingGame()
         {
             DespawnBall();
             hasStarted = false;
-            endScreenUI.SetActive(true);  
+
+            endScreenUI.SetActive(true);
+            startButton.SetActive(true);
+            restartButton.SetActive(false);
         }
 
         private bool CurrentHoleHasStarted()

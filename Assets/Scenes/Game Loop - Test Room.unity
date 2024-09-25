@@ -92961,6 +92961,8 @@ MonoBehaviour:
   - {fileID: 1210625679}
   puttingScore: {fileID: 200565282}
   endScreenUI: {fileID: 602603412}
+  startButton: {fileID: 1133055663}
+  restartButton: {fileID: 2113670275}
   golfBallPrefab: {fileID: 3334206106426155426, guid: eff6e04a0020ee3478df3976830acdb3,
     type: 3}
 --- !u!1001 &1801032342
@@ -109887,7 +109889,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2113670278}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1800183928}
+        m_TargetAssemblyTypeName: Minigolf.Putting.Game.PuttingGame, Assembly-CSharp
+        m_MethodName: RestartPuttingGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2113670278
 MonoBehaviour:
   m_ObjectHideFlags: 0
