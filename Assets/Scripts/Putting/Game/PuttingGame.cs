@@ -19,7 +19,7 @@ namespace Minigolf.Putting.Game
 
         private bool hasStarted = false;
 
-        private bool allowFirstHit = false;
+        private bool ballHitOnStart = false;
 
         /*
          * TODO: This will become a private variable later on.
@@ -30,8 +30,6 @@ namespace Minigolf.Putting.Game
         [SerializeField]
         private GolfBall golfBallPrefab;
 
-        // Only one instance of this should exist at one time
-        // Each time a hole is activated, this ball should spawn at the new hole
         private GolfBall playerGolfBall = null;
 
         private void Start()
@@ -49,7 +47,7 @@ namespace Minigolf.Putting.Game
             }
         }
 
-        public void CompleteHole()
+        private void CompleteHole()
         {
             puttingAreas[currentIndex].Hole.onHoleComplete -= CompleteHole;
             puttingScore.CompleteCurrentCard();
@@ -60,15 +58,14 @@ namespace Minigolf.Putting.Game
         {
             if (puttingAreas.Length <= 0 || hasStarted) return;
 
-            Debug.Log("Starting Putting Game");
-
             hasStarted = true;
             currentIndex = 0;
             puttingScore.StartNewPuttingGame();
+            endScreenUI.SetActive(false);
             ActivateCurrentHole();
         }
 
-        public void MoveToNextHole()
+        private void MoveToNextHole()
         {
             currentIndex++;
 
@@ -89,8 +86,6 @@ namespace Minigolf.Putting.Game
             puttingAreas[currentIndex].StartingArea.onLeftStartingArea += StartCurrentHole;
             puttingAreas[currentIndex].Hole.onHoleComplete += CompleteHole;
             SpawnBall(puttingAreas[currentIndex].StartingArea.BallSpawn);
-
-            Debug.Log($"Hole {currentIndex + 1} is active!");
             
         }
 
@@ -98,7 +93,6 @@ namespace Minigolf.Putting.Game
         {
             DespawnBall();
             hasStarted = false;
-            Debug.Log("Putting game complete!");
             endScreenUI.SetActive(true);  
         }
 
@@ -114,7 +108,7 @@ namespace Minigolf.Putting.Game
 
             if (!CurrentHoleHasStarted())
             {
-                allowFirstHit = true;
+                ballHitOnStart = true;
             }
             else
             {
@@ -122,13 +116,12 @@ namespace Minigolf.Putting.Game
             }
         }
 
-        // This can be moved into the Putting Area script
         private void StartCurrentHole()
         {
-            if (allowFirstHit)
+            if (ballHitOnStart)
             {
                 puttingAreas[currentIndex].StartingArea.onLeftStartingArea -= StartCurrentHole;
-                allowFirstHit = false;
+                ballHitOnStart = false;
                 puttingAreas[currentIndex].StartHole();
                 puttingScore.IncrementCardHits();
             }

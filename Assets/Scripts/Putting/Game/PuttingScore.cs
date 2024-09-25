@@ -56,6 +56,8 @@ namespace Minigolf.Putting.Game
         {
             cards[currentCardIndex].FinalScore = cards[currentCardIndex].Hits;
             finalScore += cards[currentCardIndex].FinalScore;
+            Debug.Log($"Your Score: {cards[currentCardIndex].FinalScore} vs Par: {cards[currentCardIndex].Par}");
+
             onUpdateScore?.Invoke(currentCardIndex, cards[currentCardIndex]);
             onUpdateFinalScore?.Invoke(finalScore);
         }

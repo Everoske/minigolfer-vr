@@ -31,7 +31,6 @@ namespace Minigolf.Putting.Hole
 
             hasStarted = true;
             hole.SetHoleStatus(true);
-            Debug.Log("Hole started! Good luck!");
         }
 
         public void ActivatePuttingArea()

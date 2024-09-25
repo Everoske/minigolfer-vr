@@ -34,7 +34,6 @@ namespace Minigolf.Putting.Hole
             if (other.TryGetComponent<GolfBall>(out GolfBall ball))
             {
                 onLeftStartingArea?.Invoke();
-                Debug.Log("Ball Left Starting Area!");
             }
         }
     }
