@@ -6,16 +6,9 @@ namespace Minigolf.UI
 {
     public class HandMenu : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        [SerializeField]
+        private NavUIButton[] navButtons;
 
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
