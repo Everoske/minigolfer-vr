@@ -4743,7 +4743,6 @@ GameObject:
   - component: {fileID: 408180346}
   - component: {fileID: 408180345}
   - component: {fileID: 408180344}
-  - component: {fileID: 408180347}
   m_Layer: 0
   m_Name: Putting Button
   m_TagString: Untagged
@@ -4853,19 +4852,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408180342}
   m_CullTransparentMesh: 1
---- !u!114 &408180347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408180342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3bc5d5035077e94696bf91ebe227edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionGroup: {fileID: 2072159834}
 --- !u!1 &409057914
 GameObject:
   m_ObjectHideFlags: 0
@@ -4876,7 +4862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 409057915}
   m_Layer: 0
-  m_Name: Submenus
+  m_Name: Submenus Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9088,7 +9074,6 @@ GameObject:
   - component: {fileID: 802972378}
   - component: {fileID: 802972377}
   - component: {fileID: 802972376}
-  - component: {fileID: 802972379}
   m_Layer: 0
   m_Name: Options Button
   m_TagString: Untagged
@@ -9198,19 +9183,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802972374}
   m_CullTransparentMesh: 1
---- !u!114 &802972379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802972374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3bc5d5035077e94696bf91ebe227edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionGroup: {fileID: 1792282797}
 --- !u!1 &808123024
 GameObject:
   m_ObjectHideFlags: 0
@@ -9904,7 +9876,7 @@ GameObject:
   - component: {fileID: 876421192}
   - component: {fileID: 876421191}
   m_Layer: 0
-  m_Name: Exit Game Button
+  m_Name: Quit App Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9973,19 +9945,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 876421192}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 957514123}
-        m_TargetAssemblyTypeName: Minigolf.UI.HandMenu, Assembly-CSharp
-        m_MethodName: OpenQuitAppConfirmation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &876421192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11338,20 +11298,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 957514117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0be6d991328a734b8d4932c2effca33, type: 3}
+  m_Script: {fileID: 11500000, guid: ceb82d049132bb64496b53778c23d6df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navButtons:
-  - {fileID: 802972379}
-  - {fileID: 408180347}
-  - {fileID: 1244269779}
-  menuContainer: {fileID: 1649846962}
-  mainMenuContainer: {fileID: 1379105511}
-  subMenuContainer: {fileID: 409057914}
-  subMenus:
-  - {fileID: 890540221}
-  - {fileID: 901680318}
-  quitMenuContainer: {fileID: 1569706085}
+  mainContainer: {fileID: 1649846962}
+  menusContainer: {fileID: 1379105511}
+  submenusContainer: {fileID: 409057914}
+  quitContainer: {fileID: 1569706085}
+  optionsButton: {fileID: 802972376}
+  puttingButton: {fileID: 408180344}
+  scoreButton: {fileID: 1244269776}
+  optionsMenu: {fileID: 1792282797}
+  puttingMenu: {fileID: 2072159834}
+  scoreMenu: {fileID: 1370300112}
+  settingsSubmenuButton: {fileID: 1313173028}
+  changePutterButton: {fileID: 1032372322}
+  settingsSubmenu: {fileID: 890540221}
+  changePutterSubmenu: {fileID: 901680318}
+  closeSubmenuButton: {fileID: 1462677785}
+  closeQuitMenuButton: {fileID: 1991576349}
+  quitToTitleButton: {fileID: 1635183730}
+  quitAppButton: {fileID: 876421191}
   confirmQuitButton: {fileID: 550172234}
 --- !u!1 &992685467
 GameObject:
@@ -11844,19 +11811,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1032372323}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 957514123}
-        m_TargetAssemblyTypeName: Minigolf.UI.HandMenu, Assembly-CSharp
-        m_MethodName: OpenSubmenu
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1032372323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14438,7 +14393,6 @@ GameObject:
   - component: {fileID: 1244269778}
   - component: {fileID: 1244269777}
   - component: {fileID: 1244269776}
-  - component: {fileID: 1244269779}
   m_Layer: 0
   m_Name: Score Button
   m_TagString: Untagged
@@ -14548,19 +14502,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244269774}
   m_CullTransparentMesh: 1
---- !u!114 &1244269779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244269774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3bc5d5035077e94696bf91ebe227edf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionGroup: {fileID: 1370300112}
 --- !u!1 &1246139255
 GameObject:
   m_ObjectHideFlags: 0
@@ -15340,19 +15281,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1313173029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 957514123}
-        m_TargetAssemblyTypeName: Minigolf.UI.HandMenu, Assembly-CSharp
-        m_MethodName: OpenSubmenu
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1313173029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16435,7 +16364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1379105512}
   m_Layer: 0
-  m_Name: Menus
+  m_Name: Menus Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17325,7 +17254,7 @@ GameObject:
   - component: {fileID: 1462677786}
   - component: {fileID: 1462677785}
   m_Layer: 0
-  m_Name: Menus Button
+  m_Name: Close Submenus Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17394,19 +17323,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1462677786}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 957514123}
-        m_TargetAssemblyTypeName: Minigolf.UI.HandMenu, Assembly-CSharp
-        m_MethodName: CloseSubmenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1462677786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19260,7 +19177,7 @@ GameObject:
   - component: {fileID: 1635183731}
   - component: {fileID: 1635183730}
   m_Layer: 0
-  m_Name: Quit to Main Button
+  m_Name: Quit to Title Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19329,19 +19246,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1635183731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 957514123}
-        m_TargetAssemblyTypeName: Minigolf.UI.HandMenu, Assembly-CSharp
-        m_MethodName: OpenQuitToTitleConfirmation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1635183731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19597,7 +19502,7 @@ GameObject:
   - component: {fileID: 1649846965}
   - component: {fileID: 1649846964}
   m_Layer: 0
-  m_Name: Menu Container
+  m_Name: Main Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23017,7 +22922,7 @@ GameObject:
   - component: {fileID: 1991576350}
   - component: {fileID: 1991576349}
   m_Layer: 0
-  m_Name: Back Button
+  m_Name: Close Quit Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23086,19 +22991,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1991576350}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 957514123}
-        m_TargetAssemblyTypeName: Minigolf.UI.HandMenu, Assembly-CSharp
-        m_MethodName: OpenMenuContainer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1991576350
 MonoBehaviour:
   m_ObjectHideFlags: 0
