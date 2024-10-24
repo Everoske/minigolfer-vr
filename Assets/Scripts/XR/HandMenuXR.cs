@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -37,6 +38,22 @@ namespace Minigolf.XR
             //    testDistanceTextL.text = string.Empty;
             //}
             testDistanceTextL.text = $"X: {leftControllerTransform.localRotation.eulerAngles.x} Y: {leftControllerTransform.localRotation.eulerAngles.y} Z: {leftControllerTransform.localRotation.eulerAngles.z}";
+        }
+
+
+        // CamForward: Composed of either the x-y components of camera.forward or the x-z components of camera.forward
+        // CamPosition: The cam's position clamped to x-y or x-z axes
+        // RefPosition: The hand reference's position clamped to x-y or x-z axes
+        // Intended Use: Call twice, once on the x-y axes and then on the x-z axes
+        private bool LookingAtRef(Vector2 camForward, Vector2 camPosition, Vector2 refPosition)
+        {
+            // Pseudocode:
+            // Create a Vector2D called camRef which is the vector between cam position and ref position
+            // Using the camForward and camRef vectors, produce an angle showing their difference
+            // If the angle is within acceptable limits return true
+            // Otherwise, return false
+
+            throw new NotImplementedException();
         }
 
         private void OnDrawGizmos()
