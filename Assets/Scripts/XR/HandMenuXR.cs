@@ -21,6 +21,9 @@ namespace Minigolf.XR
         [SerializeField]
         private float visibleDistanceLimit = 0.45f;
 
+        [SerializeField]
+        private float lookingAtLimit = 45.0f;
+
         // TESTING ONLY: REMOVE
         [SerializeField]
         private TextMeshProUGUI testDistanceTextL;
@@ -53,7 +56,16 @@ namespace Minigolf.XR
             // If the angle is within acceptable limits return true
             // Otherwise, return false
 
-            throw new NotImplementedException();
+            Vector2 camRef = camPosition + refPosition;
+
+            float theta2 = Vector2.Angle(camForward, camRef);
+            float theta = Mathf.Acos(Vector2.Dot(camForward.normalized, camRef.normalized)) * 180 / Mathf.PI;
+
+            Debug.Log($"Theta Using Vector2.Angle: {theta2} | Theta using equation: {theta}");
+
+            if (theta <= lookingAtLimit) return true;
+
+            return false;
         }
 
         private void OnDrawGizmos()
