@@ -11891,6 +11891,7 @@ MonoBehaviour:
   leftHandRef: {fileID: 1183010717}
   leftControllerTransform: {fileID: 1215676905}
   visibleDistanceLimit: 0.45
+  lookingAtLimit: 75
   testDistanceTextL: {fileID: 1740385994}
 --- !u!4 &1034132198
 Transform:

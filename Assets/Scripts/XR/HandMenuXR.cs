@@ -22,49 +22,100 @@ namespace Minigolf.XR
         private float visibleDistanceLimit = 0.45f;
 
         [SerializeField]
-        private float lookingAtLimit = 45.0f;
+        private float fovHalfHeight = 0.25f;
+
+        [SerializeField]
+        private float lookingAtAngleLimit = 45.0f;
 
         // TESTING ONLY: REMOVE
         [SerializeField]
         private TextMeshProUGUI testDistanceTextL;
 
+        // TESTING ONLY: REMOVE
+        [SerializeField]
+        private GameObject handMenu;
+
         private void Update()
         {
-            //float distance3D = Vector3.Distance(leftHandRef.transform.position, playerCamera.transform.position);
-
-            //if (distance3D <= visibleDistanceLimit )
-            //{
-            //    testDistanceTextL.text = "HELLO WORLD";
-            //}
-            //else
-            //{
-            //    testDistanceTextL.text = string.Empty;
-            //}
-            testDistanceTextL.text = $"X: {leftControllerTransform.localRotation.eulerAngles.x} Y: {leftControllerTransform.localRotation.eulerAngles.y} Z: {leftControllerTransform.localRotation.eulerAngles.z}";
+            MoveMenu();
+            HandleShowMenu();
         }
 
 
-        // CamForward: Composed of either the x-y components of camera.forward or the x-z components of camera.forward
-        // CamPosition: The cam's position clamped to x-y or x-z axes
-        // RefPosition: The hand reference's position clamped to x-y or x-z axes
-        // Intended Use: Call twice, once on the x-y axes and then on the x-z axes
+        private void HandleShowMenu()
+        {
+            float distance3D = Vector3.Distance(leftHandRef.transform.position, playerCamera.transform.position);
+
+            if (distance3D > visibleDistanceLimit || !LookingAtRef())
+            {
+                HideMenu();
+                return;
+            }
+
+            ShowMenu();
+        }
+
+        private void ShowMenu()
+        {
+            handMenu.SetActive(true);
+        }
+
+        private void HideMenu()
+        {
+            handMenu.SetActive(false);
+        }
+
+        private void MoveMenu()
+        {
+            handMenu.transform.position = leftHandRef.transform.position;
+            handMenu.transform.rotation = leftControllerTransform.rotation;
+        }
+
+        private bool LookingAtRef()
+        {
+            Vector2 xyCamForward = new Vector2(playerCamera.transform.forward.x, playerCamera.transform.forward.y);
+            Vector2 xyCamPosition = new Vector2(playerCamera.transform.position.x, playerCamera.transform.position.y);
+            Vector2 xyRefPosition = new Vector2(leftHandRef.transform.position.x, leftHandRef.transform.position.y);
+
+            if (!LookingAtRef2(xyCamForward, xyCamPosition, xyRefPosition)) return false;
+
+            Vector2 xzCamForward = new Vector2(playerCamera.transform.forward.x, playerCamera.transform.forward.z);
+            Vector2 xzCamPosition = new Vector2(playerCamera.transform.position.x, playerCamera.transform.position.z);
+            Vector2 xzRefPosition = new Vector2(leftHandRef.transform.position.x, leftHandRef.transform.position.z);
+
+            return LookingAtRef2(xzCamForward, xzCamPosition, xzRefPosition);
+        }
+
         private bool LookingAtRef(Vector2 camForward, Vector2 camPosition, Vector2 refPosition)
         {
-            // Pseudocode:
-            // Create a Vector2D called camRef which is the vector between cam position and ref position
-            // Using the camForward and camRef vectors, produce an angle showing their difference
-            // If the angle is within acceptable limits return true
-            // Otherwise, return false
+            Vector2 camRef = (refPosition - camPosition).normalized;
+            float theta = Vector2.SignedAngle(camForward.normalized, camRef);
 
-            Vector2 camRef = camPosition + refPosition;
+            if (theta < 0) Debug.Log($"Theta: {theta}");
+      
+            return theta <= lookingAtAngleLimit;
+        }
 
-            float theta2 = Vector2.Angle(camForward, camRef);
-            float theta = Mathf.Acos(Vector2.Dot(camForward.normalized, camRef.normalized)) * 180 / Mathf.PI;
+        private bool LookingAtRef2(Vector2 camForward, Vector2 camPosition, Vector2 refPosition)
+        {
+            float upperY = camPosition.y + fovHalfHeight;
+            float lowerY = camPosition.y - fovHalfHeight;
 
-            Debug.Log($"Theta Using Vector2.Angle: {theta2} | Theta using equation: {theta}");
+            if (refPosition.y <= upperY || refPosition.y >= lowerY) return true;
 
-            if (theta <= lookingAtLimit) return true;
+            //Vector2 upperCam = new Vector2(camPosition.x, camPosition.y + fovHalfHeight);
+            //Vector2 lowerCam = new Vector2(camPosition.x, camPosition.y - fovHalfHeight);
 
+            //Vector2 upperCamRef = (refPosition - upperCam).normalized; 
+            //Vector2 lowerCamRef = (refPosition - lowerCam).normalized;
+
+            //float upperTheta = Vector2.SignedAngle(camForward.normalized, upperCamRef);
+
+            //float lowerTheta = Vector2.SignedAngle(camForward.normalized, lowerCamRef);
+
+            //Debug.Log($"Upper Theta: {upperTheta} | Lower Theta: {lowerTheta}");
+
+            //return upperTheta <= 90 && lowerTheta >= -90;
             return false;
         }
 
@@ -72,6 +123,9 @@ namespace Minigolf.XR
         {
             Debug.DrawRay(leftHandRef.transform.position, leftHandRef.transform.right, Color.blue);
             Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward, Color.red);
+
+            Vector3 direct = leftHandRef.transform.position - playerCamera.transform.position;
+            Debug.DrawRay(playerCamera.transform.position, direct, Color.magenta);
         }
     }
 
