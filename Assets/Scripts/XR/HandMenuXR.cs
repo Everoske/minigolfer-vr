@@ -21,19 +21,13 @@ namespace Minigolf.XR
         [SerializeField]
         private float visibleDistanceLimit = 0.45f;
 
-        [SerializeField]
-        private float fovHalfHeight = 0.25f;
-
-        [SerializeField]
-        private float lookingAtAngleLimit = 45.0f;
-
-        // TESTING ONLY: REMOVE
-        [SerializeField]
-        private TextMeshProUGUI testDistanceTextL;
-
         // TESTING ONLY: REMOVE
         [SerializeField]
         private GameObject handMenu;
+
+        [SerializeField]
+        private LayerMask menuMask;
+
 
         private void Update()
         {
@@ -41,18 +35,29 @@ namespace Minigolf.XR
             HandleShowMenu();
         }
 
+        // Make Hand Menu Active and Fade In Using LERP
+        private void FadeIn()
+        {
+
+        }
+
+        // Fade Out Using LERP then Deactivate Hand Menu
+        private void FadeOut()
+        {
+
+        }
+
 
         private void HandleShowMenu()
         {
-            float distance3D = Vector3.Distance(leftHandRef.transform.position, playerCamera.transform.position);
-
-            if (distance3D > visibleDistanceLimit || !LookingAtRef())
+            if (!LookingAtRef())
             {
                 HideMenu();
-                return;
             }
-
-            ShowMenu();
+            else
+            {
+                ShowMenu();
+            }
         }
 
         private void ShowMenu()
@@ -73,50 +78,12 @@ namespace Minigolf.XR
 
         private bool LookingAtRef()
         {
-            Vector2 xyCamForward = new Vector2(playerCamera.transform.forward.x, playerCamera.transform.forward.y);
-            Vector2 xyCamPosition = new Vector2(playerCamera.transform.position.x, playerCamera.transform.position.y);
-            Vector2 xyRefPosition = new Vector2(leftHandRef.transform.position.x, leftHandRef.transform.position.y);
-
-            if (!LookingAtRef2(xyCamForward, xyCamPosition, xyRefPosition)) return false;
-
-            Vector2 xzCamForward = new Vector2(playerCamera.transform.forward.x, playerCamera.transform.forward.z);
-            Vector2 xzCamPosition = new Vector2(playerCamera.transform.position.x, playerCamera.transform.position.z);
-            Vector2 xzRefPosition = new Vector2(leftHandRef.transform.position.x, leftHandRef.transform.position.z);
-
-            return LookingAtRef2(xzCamForward, xzCamPosition, xzRefPosition);
-        }
-
-        private bool LookingAtRef(Vector2 camForward, Vector2 camPosition, Vector2 refPosition)
-        {
-            Vector2 camRef = (refPosition - camPosition).normalized;
-            float theta = Vector2.SignedAngle(camForward.normalized, camRef);
-
-            if (theta < 0) Debug.Log($"Theta: {theta}");
-      
-            return theta <= lookingAtAngleLimit;
-        }
-
-        private bool LookingAtRef2(Vector2 camForward, Vector2 camPosition, Vector2 refPosition)
-        {
-            float upperY = camPosition.y + fovHalfHeight;
-            float lowerY = camPosition.y - fovHalfHeight;
-
-            if (refPosition.y <= upperY || refPosition.y >= lowerY) return true;
-
-            //Vector2 upperCam = new Vector2(camPosition.x, camPosition.y + fovHalfHeight);
-            //Vector2 lowerCam = new Vector2(camPosition.x, camPosition.y - fovHalfHeight);
-
-            //Vector2 upperCamRef = (refPosition - upperCam).normalized; 
-            //Vector2 lowerCamRef = (refPosition - lowerCam).normalized;
-
-            //float upperTheta = Vector2.SignedAngle(camForward.normalized, upperCamRef);
-
-            //float lowerTheta = Vector2.SignedAngle(camForward.normalized, lowerCamRef);
-
-            //Debug.Log($"Upper Theta: {upperTheta} | Lower Theta: {lowerTheta}");
-
-            //return upperTheta <= 90 && lowerTheta >= -90;
-            return false;
+            return Physics.Raycast(
+                playerCamera.transform.position, 
+                playerCamera.transform.forward, 
+                visibleDistanceLimit,
+                menuMask
+                );
         }
 
         private void OnDrawGizmos()
