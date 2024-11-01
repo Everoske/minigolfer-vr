@@ -145,29 +145,29 @@ namespace Minigolf.UI
 
         private void FadeIn()
         {
-            if (fadeCounter >= fadeTime)
+            if (fadeCounter < fadeTime)
             {
-                alphaController.alpha = 1.0f;
-                shouldFadeIn = false;
+                alphaController.alpha = Mathf.Lerp(0.0f, 1.0f, fadeCounter / fadeTime);
                 return;
-            }
+            } 
 
-            alphaController.alpha = fadeCounter / fadeTime;
+            alphaController.alpha = 1.0f;
+            shouldFadeIn = false;
         }
 
 
         private void FadeOut()
         {
-            if (fadeCounter >= fadeTime)
+            if (fadeCounter < fadeTime)
             {
-                alphaController.alpha = 0.0f;
-                shouldFadeOut = false;
-                gameObject.SetActive(false);
-                SetInitialState();
+                alphaController.alpha = Mathf.Lerp(1.0f, 0.0f, fadeCounter / fadeTime);
                 return;
             }
 
-            alphaController.alpha = 1 - fadeCounter / fadeTime;
+            alphaController.alpha = 0.0f;
+            shouldFadeOut = false;
+            gameObject.SetActive(false);
+            SetInitialState();
         }
 
         public void OpenHandMenu()

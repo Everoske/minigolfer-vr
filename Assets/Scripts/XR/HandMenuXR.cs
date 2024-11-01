@@ -17,10 +17,10 @@ namespace Minigolf.XR
         private GameObject leftHandRef;
 
         [SerializeField]
-        private Transform leftControllerTransform;
+        private GameObject rightHandRef;
 
         [SerializeField]
-        private float visibleDistanceLimit = 0.45f;
+        private float visibleDistanceLimit = 0.25f;
 
         [SerializeField]
         private HandMenuController handMenu;
@@ -28,7 +28,24 @@ namespace Minigolf.XR
         [SerializeField]
         private LayerMask menuMask;
 
+        [SerializeField]
+        private GameObject activeReference;
+
         private GameObject activeHandRef;
+
+        // TODO: PAY ATTENTION
+        // Implement:
+        // - Check to see if player is hovering, holding, or otherwise using the menu hand
+        // - Hand Menu should only open if player is not using the activeReference hand
+        // Note:
+        // - Handedness might need to be tracked else where
+        // - Preferred handedness should be saved in a settings file and loaded from that file on start
+
+
+        private void Start()
+        {
+            SwitchActiveReference(Handedness.Left);
+        }
 
         private void Update()
         {
@@ -37,22 +54,22 @@ namespace Minigolf.XR
         }
         
 
-        // Switch Hand Reference from Left to Right
-        private void SwitchActiveReference()
+        // TODO: Consider adding a queue so the swap happens only after the player closes the menu
+        public void SwitchActiveReference(Handedness handedness) 
         {
+            if (handedness == Handedness.Left)
+            {
+                rightHandRef.SetActive(false);
+                leftHandRef.SetActive(true);
+                activeHandRef = leftHandRef;
+            }
+            else
+            {
+                rightHandRef.SetActive(true);
+                leftHandRef.SetActive(false);
 
-        }
-
-        private void DeactiveReference(GameObject reference)
-        {
-            reference.SetActive(false);
-            reference.GetComponent<SphereCollider>().enabled = false;
-        }
-
-        private void ActivateReference(GameObject reference)
-        {
-            reference.SetActive(true);
-            reference.GetComponent<SphereCollider>().enabled = true;
+                activeHandRef = rightHandRef;
+            }
         }
 
 
@@ -70,8 +87,10 @@ namespace Minigolf.XR
 
         private void MoveMenu()
         {
-            handMenu.transform.position = leftHandRef.transform.position;
-            handMenu.transform.rotation = leftHandRef.transform.rotation;
+            if (activeHandRef == null) return;
+
+            handMenu.transform.position = activeHandRef.transform.position;
+            handMenu.transform.rotation = activeHandRef.transform.rotation;
         }
 
         private bool LookingAtRef()
@@ -83,5 +102,11 @@ namespace Minigolf.XR
                 menuMask
                 );
         }
+    }
+
+    public enum Handedness
+    {
+        Left,
+        Right
     }
 }
