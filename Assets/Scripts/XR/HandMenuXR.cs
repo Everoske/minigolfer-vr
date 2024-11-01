@@ -1,3 +1,4 @@
+using Minigolf.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,30 +22,37 @@ namespace Minigolf.XR
         [SerializeField]
         private float visibleDistanceLimit = 0.45f;
 
-        // TESTING ONLY: REMOVE
         [SerializeField]
-        private GameObject handMenu;
+        private HandMenuController handMenu;
 
         [SerializeField]
         private LayerMask menuMask;
 
+        private GameObject activeHandRef;
 
         private void Update()
         {
             MoveMenu();
             HandleShowMenu();
         }
+        
 
-        // Make Hand Menu Active and Fade In Using LERP
-        private void FadeIn()
+        // Switch Hand Reference from Left to Right
+        private void SwitchActiveReference()
         {
 
         }
 
-        // Fade Out Using LERP then Deactivate Hand Menu
-        private void FadeOut()
+        private void DeactiveReference(GameObject reference)
         {
+            reference.SetActive(false);
+            reference.GetComponent<SphereCollider>().enabled = false;
+        }
 
+        private void ActivateReference(GameObject reference)
+        {
+            reference.SetActive(true);
+            reference.GetComponent<SphereCollider>().enabled = true;
         }
 
 
@@ -52,28 +60,18 @@ namespace Minigolf.XR
         {
             if (!LookingAtRef())
             {
-                HideMenu();
+                handMenu.CloseHandMenu();
             }
             else
             {
-                ShowMenu();
+                handMenu.OpenHandMenu();
             }
-        }
-
-        private void ShowMenu()
-        {
-            handMenu.SetActive(true);
-        }
-
-        private void HideMenu()
-        {
-            handMenu.SetActive(false);
         }
 
         private void MoveMenu()
         {
             handMenu.transform.position = leftHandRef.transform.position;
-            handMenu.transform.rotation = leftControllerTransform.rotation;
+            handMenu.transform.rotation = leftHandRef.transform.rotation;
         }
 
         private bool LookingAtRef()
@@ -85,15 +83,5 @@ namespace Minigolf.XR
                 menuMask
                 );
         }
-
-        private void OnDrawGizmos()
-        {
-            Debug.DrawRay(leftHandRef.transform.position, leftHandRef.transform.right, Color.blue);
-            Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward, Color.red);
-
-            Vector3 direct = leftHandRef.transform.position - playerCamera.transform.position;
-            Debug.DrawRay(playerCamera.transform.position, direct, Color.magenta);
-        }
     }
-
 }

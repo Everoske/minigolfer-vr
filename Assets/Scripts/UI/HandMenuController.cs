@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 namespace Minigolf.UI
 {
+    [RequireComponent(typeof(CanvasGroup))]
     public class HandMenuController : MonoBehaviour
     {
         [Header("UI Content Containers")]
@@ -58,7 +59,9 @@ namespace Minigolf.UI
         private Button quitAppButton;
         [SerializeField]
         private Button confirmQuitButton;
-        
+
+        [SerializeField]
+        private float fadeTime = 0.5f;
 
         private GameObject activeMenu;
 
@@ -66,9 +69,23 @@ namespace Minigolf.UI
 
         private GameObject activeSubmenu;
 
+        private CanvasGroup alphaController;
+
+        private bool isOpen;
+        private bool shouldFadeIn = false;
+        private bool shouldFadeOut = false;
+
+        private float fadeCounter = 0.0f;
+
+        private void Awake()
+        {
+            alphaController = GetComponent<CanvasGroup>();
+        }
+
 
         private void Start()
         {
+            isOpen = gameObject.activeInHierarchy;
             SetInitialState();
         }
 
@@ -105,15 +122,91 @@ namespace Minigolf.UI
             confirmQuitButton.onClick.RemoveAllListeners();
         }
 
+        private void Update()
+        {
+            HandleFade();
+        }
+
+        private void HandleFade()
+        {
+            if (!shouldFadeIn && !shouldFadeOut) return;
+
+            fadeCounter += Time.deltaTime;
+
+            if (shouldFadeIn)
+            {
+                FadeIn();
+            }
+            else
+            {
+                FadeOut();
+            }
+        }
+
+        private void FadeIn()
+        {
+            if (fadeCounter >= fadeTime)
+            {
+                alphaController.alpha = 1.0f;
+                shouldFadeIn = false;
+                return;
+            }
+
+            alphaController.alpha = fadeCounter / fadeTime;
+        }
+
+
+        private void FadeOut()
+        {
+            if (fadeCounter >= fadeTime)
+            {
+                alphaController.alpha = 0.0f;
+                shouldFadeOut = false;
+                gameObject.SetActive(false);
+                SetInitialState();
+                return;
+            }
+
+            alphaController.alpha = 1 - fadeCounter / fadeTime;
+        }
+
         public void OpenHandMenu()
         {
-            SetInitialState();
+            if (isOpen) return;
+
             gameObject.SetActive(true);
+            shouldFadeOut = false;
+            isOpen = true;
+
+            if (alphaController.alpha > 0.0f)
+            {
+                fadeCounter = (1 - alphaController.alpha / 1) * fadeTime;
+            }
+            else
+            {
+                fadeCounter = 0;
+            }
+
+            shouldFadeIn = true;
         }
 
         public void CloseHandMenu()
         {
-            gameObject.SetActive(false);
+            if (!isOpen) return;
+
+            shouldFadeIn = false;
+            isOpen = false;
+
+            if (alphaController.alpha < 1.0f)
+            {
+                fadeCounter = (alphaController.alpha / 1) * fadeTime;
+            }
+            else
+            {
+                fadeCounter = 0;
+            }
+
+            shouldFadeOut = true;
         }
 
         private void SetInitialState()
