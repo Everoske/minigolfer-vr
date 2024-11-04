@@ -39,23 +39,34 @@ namespace Minigolf.XR
         private GameObject activeReference;
         private GameObject activeHandRef;
         private Handedness activeHand;
+        private Handedness queuedHand;
 
         private void Start()
         {
             SwitchActiveReference(Handedness.Left);
+            SetActiveHand();
         }
 
         private void Update()
         {
             MoveMenu();
             HandleShowMenu();
+            if (!handMenu.gameObject.activeInHierarchy && activeHand != queuedHand)
+            {
+                SetActiveHand();
+            }
         }
         
-
-        // TODO: Consider adding a queue so the swap happens only after the player closes the menu
         public void SwitchActiveReference(Handedness handedness) 
         {
-            if (handedness == Handedness.Left)
+            queuedHand = handedness;
+        }
+
+        private void SetActiveHand()
+        {
+            activeHand = queuedHand;
+
+            if (activeHand == Handedness.Left)
             {
                 rightHandRef.SetActive(false);
                 leftHandRef.SetActive(true);
@@ -64,16 +75,13 @@ namespace Minigolf.XR
             }
             else
             {
-                
+
                 leftHandRef.SetActive(false);
                 rightHandRef.SetActive(true);
 
                 activeHandRef = rightHandRef;
             }
-
-            activeHand = handedness;
         }
-
 
         private void HandleShowMenu()
         {
