@@ -4,7 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UIElements;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Minigolf.XR
 {
@@ -20,6 +23,11 @@ namespace Minigolf.XR
         private GameObject rightHandRef;
 
         [SerializeField]
+        private XRDirectInteractor leftDirectInteractor;
+        [SerializeField]
+        private XRDirectInteractor rightDirectInteractor;
+
+        [SerializeField]
         private float visibleDistanceLimit = 0.25f;
 
         [SerializeField]
@@ -28,19 +36,9 @@ namespace Minigolf.XR
         [SerializeField]
         private LayerMask menuMask;
 
-        [SerializeField]
         private GameObject activeReference;
-
         private GameObject activeHandRef;
-
-        // TODO: PAY ATTENTION
-        // Implement:
-        // - Check to see if player is hovering, holding, or otherwise using the menu hand
-        // - Hand Menu should only open if player is not using the activeReference hand
-        // Note:
-        // - Handedness might need to be tracked else where
-        // - Preferred handedness should be saved in a settings file and loaded from that file on start
-
+        private Handedness activeHand;
 
         private void Start()
         {
@@ -61,28 +59,43 @@ namespace Minigolf.XR
             {
                 rightHandRef.SetActive(false);
                 leftHandRef.SetActive(true);
+
                 activeHandRef = leftHandRef;
             }
             else
             {
-                rightHandRef.SetActive(true);
+                
                 leftHandRef.SetActive(false);
+                rightHandRef.SetActive(true);
 
                 activeHandRef = rightHandRef;
             }
+
+            activeHand = handedness;
         }
 
 
         private void HandleShowMenu()
         {
-            if (!LookingAtRef())
-            {
-                handMenu.CloseHandMenu();
-            }
-            else
+            if (LookingAtRef() && CanOpenMenu())
             {
                 handMenu.OpenHandMenu();
             }
+            else
+            {
+                handMenu.CloseHandMenu();
+            }
+            
+        }
+
+        private bool CanOpenMenu()
+        {
+            if (activeHand == Handedness.Left)
+            {
+                return !leftDirectInteractor.hasHover && !leftDirectInteractor.hasSelection;
+            }
+
+            return !rightDirectInteractor.hasHover && !rightDirectInteractor.hasSelection;
         }
 
         private void MoveMenu()

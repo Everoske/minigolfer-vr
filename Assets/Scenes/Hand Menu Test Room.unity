@@ -341,12 +341,6 @@ MonoBehaviour:
   m_UIHoverExited:
     m_PersistentCalls:
       m_Calls: []
---- !u!4 &357847180 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8539724128609236144, guid: 11bca625443cca74d8c62ab39802a729,
-    type: 3}
-  m_PrefabInstance: {fileID: 630019611}
-  m_PrefabAsset: {fileID: 0}
 --- !u!20 &357847184 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6219935811295346660, guid: 11bca625443cca74d8c62ab39802a729,
@@ -418,12 +412,13 @@ MonoBehaviour:
   playerCamera: {fileID: 357847184}
   leftHandRef: {fileID: 1183010717}
   rightHandRef: {fileID: 2135654794}
+  leftDirectInteractor: {fileID: 900810128}
+  rightDirectInteractor: {fileID: 1856140158}
   visibleDistanceLimit: 0.4
   handMenu: {fileID: 5879645122822880399}
   menuMask:
     serializedVersion: 2
     m_Bits: 8388608
-  activeReference: {fileID: 0}
 --- !u!1 &478904461
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +551,11 @@ PrefabInstance:
       objectReference: {fileID: 375090747}
     - target: {fileID: 5065785449245656422, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
+      propertyPath: m_StartingGroupMembers.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065785449245656422, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
       propertyPath: m_StartingInteractionOverridesMap.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -566,6 +566,11 @@ PrefabInstance:
       objectReference: {fileID: 208023734}
     - target: {fileID: 5065785449245656422, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
+      propertyPath: m_StartingInteractionOverridesMap.Array.data[3].groupMember
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065785449245656422, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
       propertyPath: m_StartingInteractionOverridesMap.Array.data[0].overrideGroupMembers.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -573,6 +578,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StartingInteractionOverridesMap.Array.data[2].overrideGroupMembers.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065785449245656422, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
+      propertyPath: m_StartingInteractionOverridesMap.Array.data[3].overrideGroupMembers.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5065785449245656422, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
@@ -589,6 +599,21 @@ PrefabInstance:
       propertyPath: m_StartingInteractionOverridesMap.Array.data[2].overrideGroupMembers.Array.data[1]
       value: 
       objectReference: {fileID: 1856140158}
+    - target: {fileID: 5065785449245656422, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
+      propertyPath: m_StartingInteractionOverridesMap.Array.data[3].overrideGroupMembers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1200940880}
+    - target: {fileID: 5065785449245656422, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
+      propertyPath: m_StartingInteractionOverridesMap.Array.data[3].overrideGroupMembers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1856140158}
+    - target: {fileID: 5065785449245656422, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
+      propertyPath: m_StartingInteractionOverridesMap.Array.data[3].overrideGroupMembers.Array.data[2]
+      value: 
+      objectReference: {fileID: 208023734}
     - target: {fileID: 5672897108284228216, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: m_Name
@@ -622,7 +647,7 @@ PrefabInstance:
     - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: m_StartingGroupMembers.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
@@ -642,7 +667,7 @@ PrefabInstance:
     - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: m_StartingInteractionOverridesMap.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
@@ -672,12 +697,12 @@ PrefabInstance:
     - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: m_StartingInteractionOverridesMap.Array.data[2].overrideGroupMembers.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: m_StartingInteractionOverridesMap.Array.data[3].overrideGroupMembers.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
@@ -699,13 +724,19 @@ PrefabInstance:
       propertyPath: m_StartingInteractionOverridesMap.Array.data[3].overrideGroupMembers.Array.data[0]
       value: 
       objectReference: {fileID: 900810128}
+    - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
+      propertyPath: m_StartingInteractionOverridesMap.Array.data[3].overrideGroupMembers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1205320831}
+    - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
+      propertyPath: m_StartingInteractionOverridesMap.Array.data[3].overrideGroupMembers.Array.data[2]
+      value: 
+      objectReference: {fileID: 2018944637}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8539724128609236144, guid: 11bca625443cca74d8c62ab39802a729,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1092392332}
     - targetCorrespondingSourceObject: {fileID: 6570375058277975114, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       insertIndex: -1
@@ -833,186 +864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4253f32900bcc4d499d675566142ded0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1092392331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1092392332}
-  - component: {fileID: 1092392334}
-  - component: {fileID: 1092392333}
-  m_Layer: 0
-  m_Name: Hand Menu Detector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1092392332
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092392331}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 357847180}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1092392333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092392331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 1096229333}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 536870912
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 1
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!135 &1092392334
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092392331}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1096229331
 GameObject:
   m_ObjectHideFlags: 0
