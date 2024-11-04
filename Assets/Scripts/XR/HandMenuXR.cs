@@ -51,15 +51,20 @@ namespace Minigolf.XR
         {
             MoveMenu();
             HandleShowMenu();
-            if (!handMenu.gameObject.activeInHierarchy && activeHand != queuedHand)
-            {
-                SetActiveHand();
-            }
+            HandleChangeHands();
         }
         
         public void SwitchActiveReference(Handedness handedness) 
         {
             queuedHand = handedness;
+        }
+
+        private void HandleChangeHands()
+        {
+            if (activeHand == queuedHand) return;
+            if (handMenu.gameObject.activeInHierarchy) return;
+
+            SetActiveHand();
         }
 
         private void SetActiveHand()
@@ -75,7 +80,6 @@ namespace Minigolf.XR
             }
             else
             {
-
                 leftHandRef.SetActive(false);
                 rightHandRef.SetActive(true);
 
