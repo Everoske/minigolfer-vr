@@ -14,27 +14,40 @@ namespace Minigolf.XR
     public class HandMenuXR : MonoBehaviour
     {
         [SerializeField]
+        private SphereCollider handRefPrefab;
+        
+        [Header("Main Interaction Objects")]
+        [SerializeField]
         private Camera playerCamera;
-
         [SerializeField]
-        private GameObject leftHandRef;
-
-        [SerializeField]
-        private GameObject rightHandRef;
-
+        private GameObject leftHandParent;
+        [SerializeField] 
+        private GameObject rightHandParent;
         [SerializeField]
         private XRDirectInteractor leftDirectInteractor;
         [SerializeField]
         private XRDirectInteractor rightDirectInteractor;
-
-        [SerializeField]
-        private float visibleDistanceLimit = 0.25f;
-
         [SerializeField]
         private HandMenuController handMenu;
 
+        [Header("Menu Offset")]
+        [SerializeField]
+        private float offsetX = 0.18f;
+        [SerializeField]
+        private float offsetY = 0.02f;
+        [SerializeField]
+        private float offsetZ = 0.0f;
+
+        [Header("Menu Activation Parameters")]
+        [SerializeField]
+        private float detectionRadius = 0.25f;
+        [SerializeField]
+        private float visibleDistanceLimit = 0.25f;
         [SerializeField]
         private LayerMask menuMask;
+
+        private GameObject leftHandRef;
+        private GameObject rightHandRef;
 
         private GameObject activeReference;
         private GameObject activeHandRef;
@@ -43,6 +56,7 @@ namespace Minigolf.XR
 
         private void Start()
         {
+            CreateHandReferences();
             SwitchActiveReference(Handedness.Left);
             SetActiveHand();
         }
@@ -54,6 +68,17 @@ namespace Minigolf.XR
             HandleChangeHands();
         }
         
+        private void CreateHandReferences()
+        {
+            leftHandRef = Instantiate(handRefPrefab.gameObject, leftHandParent.transform);
+            leftHandRef.transform.SetLocalPositionAndRotation(leftHandRef.transform.localPosition + new Vector3(offsetX, offsetY, offsetZ), Quaternion.identity);
+            leftHandRef.GetComponent<SphereCollider>().radius = detectionRadius;
+
+            rightHandRef = Instantiate(handRefPrefab.gameObject, rightHandParent.transform);
+            rightHandRef.transform.SetLocalPositionAndRotation(rightHandRef.transform.localPosition + new Vector3(-offsetX, offsetY, offsetZ), Quaternion.identity);
+            rightHandRef.GetComponent<SphereCollider>().radius = detectionRadius;
+        }
+
         public void SwitchActiveReference(Handedness handedness) 
         {
             queuedHand = handedness;
