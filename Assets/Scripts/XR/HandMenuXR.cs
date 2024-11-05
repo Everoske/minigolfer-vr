@@ -28,6 +28,8 @@ namespace Minigolf.XR
         [SerializeField]
         private XRDirectInteractor rightDirectInteractor;
         [SerializeField]
+        private XRRayInteractor teleportInteractor;
+        [SerializeField]
         private HandMenuController handMenu;
 
         [Header("Menu Offset")]
@@ -127,6 +129,8 @@ namespace Minigolf.XR
 
         private bool CanOpenMenu()
         {
+            if (teleportInteractor.hasHover) return false;
+
             if (activeHand == Handedness.Left)
             {
                 return !leftDirectInteractor.hasHover && !leftDirectInteractor.hasSelection;
