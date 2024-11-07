@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Minigolf.UI
 {
@@ -13,13 +14,20 @@ namespace Minigolf.UI
         private TextMeshProUGUI parText;
         [SerializeField]
         private TextMeshProUGUI hitsText;
+
         [SerializeField]
-        private TextMeshProUGUI finalText;
+        private Image backgroundImage;
+
+        [SerializeField]
+        private Color backColorNormal = Color.clear;
+        [SerializeField]
+        private Color backColorActive;
 
         public void SetupSlot(int hole, int par)
         {
             holeText.text = hole.ToString();
             parText.text = par.ToString();
+            hitsText.text = "0";
         }
 
         public void SetHitsText(int hits)
@@ -27,9 +35,9 @@ namespace Minigolf.UI
             hitsText.text = hits.ToString();
         }
 
-        public void SetFinalText(int final)
+        public void SetActiveSlot(bool active)
         {
-            finalText.text = final.ToString();
+            backgroundImage.color = active ? backColorActive : backColorNormal;
         }
     }
 }
