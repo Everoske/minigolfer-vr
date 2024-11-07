@@ -167,7 +167,7 @@ namespace Minigolf.UI
             alphaController.alpha = 0.0f;
             shouldFadeOut = false;
             gameObject.SetActive(false);
-            SetInitialState();
+            CloseQuitContainer();
         }
 
         public void OpenHandMenu()

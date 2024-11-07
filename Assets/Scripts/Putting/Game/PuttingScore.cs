@@ -11,8 +11,10 @@ namespace Minigolf.Putting.Game
         private ScoreCard[] cards;
         private int currentCardIndex = 0;
 
-        public UnityAction<int, ScoreCard> onCreateCard;
+        public UnityAction<ScoreCard[]> onCreateCards;
         public UnityAction<int, ScoreCard> onUpdateScore;
+        public UnityAction<int> onActivateCard;
+        public UnityAction<int> onDeactivateCard;
         public UnityAction<int> onTallyFinalPar;
         public UnityAction<int> onUpdateFinalScore;
 
@@ -29,9 +31,9 @@ namespace Minigolf.Putting.Game
                 cards[i] = new ScoreCard();
                 cards[i].Par = puttingAreas[i].Par;
                 totalPar += cards[i].Par;
-                onCreateCard?.Invoke(i, cards[i]);
             }
 
+            onCreateCards?.Invoke(cards);
             onTallyFinalPar?.Invoke(totalPar);
         }
 
@@ -39,25 +41,24 @@ namespace Minigolf.Putting.Game
         {
             ClearScores();
             currentCardIndex = 0;
+            onActivateCard?.Invoke(currentCardIndex);
         }
 
         public void NextCard()
         {
             currentCardIndex++;
+            onActivateCard?.Invoke(currentCardIndex);
+        }
+
+        public void CompleteCurrentCard()
+        {
+            onDeactivateCard?.Invoke(currentCardIndex);
         }
 
         public void IncrementCardHits()
         {
             cards[currentCardIndex].Hits++;
-            onUpdateScore?.Invoke(currentCardIndex, cards[currentCardIndex]);
-        }
-
-        public void CompleteCurrentCard()
-        {
-            cards[currentCardIndex].FinalScore = cards[currentCardIndex].Hits;
-            finalScore += cards[currentCardIndex].FinalScore;
-            Debug.Log($"Your Score: {cards[currentCardIndex].FinalScore} vs Par: {cards[currentCardIndex].Par}");
-
+            finalScore++;
             onUpdateScore?.Invoke(currentCardIndex, cards[currentCardIndex]);
             onUpdateFinalScore?.Invoke(finalScore);
         }
@@ -66,13 +67,11 @@ namespace Minigolf.Putting.Game
         {
             for (int i = 0;i < cards.Length;i++)
             {
-                cards[i].FinalScore = 0;
                 cards[i].Hits = 0;
                 finalScore = 0;
                 onUpdateScore?.Invoke(i, cards[i]);
                 onUpdateFinalScore?.Invoke(finalScore);
             }
-            
         }
     }
 
@@ -80,6 +79,6 @@ namespace Minigolf.Putting.Game
     {
         public int Par;
         public int Hits;
-        public int FinalScore;
+
     }
 }

@@ -1,6 +1,7 @@
 using Minigolf.Putting.Game;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace Minigolf.UI
@@ -8,17 +9,27 @@ namespace Minigolf.UI
     public class ScoreUIDisplay : MonoBehaviour
     {
         [SerializeField]
-        private ScoreSlot[] scoreSlots;
-
+        private TextMeshProUGUI totalParText;
         [SerializeField]
-        private FinalScoreSlot finalScoreSlot;
+        private TextMeshProUGUI finalScoreText;
 
+        // Consider making this fully private and using FindByType since only one puttingScore should exist per minigolf course
         [SerializeField]
         private PuttingScore puttingScore;
 
+        [SerializeField]
+        private ScoreSlot slotPrefab;
+
+        [SerializeField]
+        private GameObject slotContainer;
+
+        private ScoreSlot[] scoreSlots;
+
         private void OnEnable()
         {
-            puttingScore.onCreateCard += CreateScoreSlot;
+            puttingScore.onCreateCards += CreateScoreSlots;
+            puttingScore.onActivateCard += ActivateSlot;
+            puttingScore.onDeactivateCard += DeactivateSlot;
             puttingScore.onUpdateScore += UpdateScoreSlot;
             puttingScore.onTallyFinalPar += RecordTotalPar;
             puttingScore.onUpdateFinalScore += UpdateTotalScore;
@@ -26,7 +37,9 @@ namespace Minigolf.UI
 
         private void OnDisable()
         {
-            puttingScore.onCreateCard -= CreateScoreSlot;
+            puttingScore.onCreateCards -= CreateScoreSlots;
+            puttingScore.onActivateCard -= ActivateSlot;
+            puttingScore.onDeactivateCard -= DeactivateSlot;
             puttingScore.onUpdateScore -= UpdateScoreSlot;
             puttingScore.onTallyFinalPar -= RecordTotalPar;
             puttingScore.onUpdateFinalScore -= UpdateTotalScore;
@@ -34,19 +47,12 @@ namespace Minigolf.UI
 
         private void UpdateTotalScore(int totalScore)
         {
-            finalScoreSlot.SetFinalScoreText(totalScore);
+            finalScoreText.text = totalScore.ToString();
         }
 
         private void RecordTotalPar(int totalPar)
         {
-            finalScoreSlot.SetTotalParText(totalPar);
-        }
-
-        private void CreateScoreSlot(int index, ScoreCard scoreCard)
-        {
-            if (index > scoreSlots.Length) return;
-
-            scoreSlots[index].SetupSlot(index + 1, scoreCard.Par);
+            totalParText.text = totalPar.ToString();
         }
 
         private void UpdateScoreSlot(int index, ScoreCard scoreCard)
@@ -54,7 +60,26 @@ namespace Minigolf.UI
             if (index > scoreSlots.Length) return;
 
             scoreSlots[index].SetHitsText(scoreCard.Hits);
-            scoreSlots[index].SetFinalText(scoreCard.FinalScore);
+        }
+
+        private void CreateScoreSlots(ScoreCard[] cards)
+        {
+            scoreSlots = new ScoreSlot[cards.Length];
+            for (int i = 0; i < cards.Length; i++)
+            {
+                scoreSlots[i] = Instantiate(slotPrefab, slotContainer.transform);
+                scoreSlots[i].SetupSlot(i + 1, cards[i].Par);
+            }
+        }
+
+        private void DeactivateSlot(int active)
+        {
+            scoreSlots[active].SetActiveSlot(false);
+        }
+
+        private void ActivateSlot(int next)
+        {
+            scoreSlots[next].SetActiveSlot(true);
         }
     }
 }
