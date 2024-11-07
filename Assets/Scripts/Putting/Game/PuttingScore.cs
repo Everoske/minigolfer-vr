@@ -72,7 +72,6 @@ namespace Minigolf.Putting.Game
                 onUpdateScore?.Invoke(i, cards[i]);
                 onUpdateFinalScore?.Invoke(finalScore);
             }
-            
         }
     }
 
