@@ -1,6 +1,7 @@
 using Minigolf.Putting.Hole;
 using Minigolf.Putting.Interactable;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Minigolf.Putting.Game
 {
@@ -21,9 +22,12 @@ namespace Minigolf.Putting.Game
         [SerializeField]
         private GameObject restartButton;
 
+        public UnityAction onStartPuttingGame;
+        public UnityAction onEndPuttingGame;
+
         private int currentIndex = 0;
 
-        private bool hasStarted = false;
+        private bool gameActive = false;
 
         private bool ballHitOnStart = false;
 
@@ -46,13 +50,16 @@ namespace Minigolf.Putting.Game
         private void OnDisable()
         {
             DespawnBall();
-            if (hasStarted && currentIndex < puttingAreas.Length)
+            if (gameActive && currentIndex < puttingAreas.Length)
             {
                 puttingAreas[currentIndex].StartingArea.onLeftStartingArea -= StartCurrentHole;
                 puttingAreas[currentIndex].Hole.onHoleComplete -= CompleteHole;
             }
         }
 
+        /// <summary>
+        /// Finalizes the current hole and marks it as complete
+        /// </summary>
         private void CompleteHole()
         {
             puttingAreas[currentIndex].Hole.onHoleComplete -= CompleteHole;
@@ -60,11 +67,14 @@ namespace Minigolf.Putting.Game
             MoveToNextHole();
         }
 
+        /// <summary>
+        /// Initializes a putting game
+        /// </summary>
         public void StartPuttingGame()
         {
-            if (puttingAreas.Length <= 0 || hasStarted) return;
+            if (puttingAreas.Length <= 0 || gameActive) return;
 
-            hasStarted = true;
+            gameActive = true;
             currentIndex = 0;
             puttingScore.StartNewPuttingGame();
 
@@ -72,20 +82,28 @@ namespace Minigolf.Putting.Game
             startButton.SetActive(false);
             restartButton.SetActive(true);
 
+            onStartPuttingGame?.Invoke();
+
             ActivateCurrentHole();
         }
 
+        /// <summary>
+        /// Closes the current game and restarts the player at hole 1
+        /// </summary>
         public void RestartPuttingGame()
         {
-            if (!hasStarted) return;
+            if (!gameActive) return;
 
             DeactivateCurrentHole();
             DespawnBall();
 
-            hasStarted = false;
+            gameActive = false;
             StartPuttingGame();
         }
 
+        /// <summary>
+        /// Moves to the next hole in the game
+        /// </summary>
         private void MoveToNextHole()
         {
             currentIndex++;
@@ -101,6 +119,9 @@ namespace Minigolf.Putting.Game
             }
         }
 
+        /// <summary>
+        /// Adds listeners to the current hole and starts awaiting input from player
+        /// </summary>
         private void ActivateCurrentHole()
         {
             puttingAreas[currentIndex].ActivatePuttingArea();
@@ -109,6 +130,9 @@ namespace Minigolf.Putting.Game
             SpawnBall(puttingAreas[currentIndex].StartingArea.BallSpawn);
         }
 
+        /// <summary>
+        /// Removes listeners from the current hole
+        /// </summary>
         private void DeactivateCurrentHole()
         {
             if (!CurrentHoleHasStarted())
@@ -119,25 +143,37 @@ namespace Minigolf.Putting.Game
             puttingAreas[currentIndex].Hole.onHoleComplete -= CompleteHole;
         }
 
+        /// <summary>
+        /// Ends the current putting game
+        /// </summary>
         private void EndPuttingGame()
         {
             DespawnBall();
-            hasStarted = false;
+            gameActive = false;
 
             endScreenUI.SetActive(true);
             startButton.SetActive(true);
             restartButton.SetActive(false);
+
+            onEndPuttingGame?.Invoke();
         }
 
+        /// <summary>
+        /// Determines if the current hole has been started by the player 
+        /// </summary>
+        /// <returns></returns>
         private bool CurrentHoleHasStarted()
         {
             if (currentIndex > puttingAreas.Length) return false;
             return puttingAreas[currentIndex].HasStarted;
         }
 
+        /// <summary>
+        /// Determines how to process the hitting of the player's golf ball
+        /// </summary>
         private void HandleBallHit()
         {
-            if (!hasStarted) return;
+            if (!gameActive) return;
 
             if (!CurrentHoleHasStarted())
             {
@@ -149,6 +185,9 @@ namespace Minigolf.Putting.Game
             }
         }
 
+        /// <summary>
+        /// Starts the current hole
+        /// </summary>
         private void StartCurrentHole()
         {
             if (ballHitOnStart)
@@ -160,6 +199,9 @@ namespace Minigolf.Putting.Game
             }
         }
 
+        /// <summary>
+        /// Destroys the active instance of the player's ball
+        /// </summary>
         private void DespawnBall()
         {
             if (playerGolfBall == null) return;
@@ -170,9 +212,13 @@ namespace Minigolf.Putting.Game
             playerGolfBall = null;
         }
 
+        /// <summary>
+        /// Spawns the player's ball at the given world position
+        /// </summary>
+        /// <param name="position">Spawn Location</param>
         public void SpawnBall(Vector3 position)
         {
-            if (!hasStarted) return;
+            if (!gameActive) return;
 
             if (playerGolfBall != null)
             {
@@ -181,6 +227,16 @@ namespace Minigolf.Putting.Game
 
             playerGolfBall = Instantiate(golfBallPrefab, position, Quaternion.identity);
             playerGolfBall.onBallHit += HandleBallHit;
+        }
+
+        /// <summary>
+        /// Teleports Player to Active Hole
+        /// </summary>
+        public void TeleportToCurrentHole()
+        {
+            if (!gameActive) return;
+
+            Debug.Log($"Teleporting to hole: {currentIndex + 1}");
         }
     }
 }
