@@ -23,6 +23,10 @@ namespace Minigolf.Putting.Game
         
         public ScoreCard[] Cards => cards;
 
+        /// <summary>
+        /// Creates Score Cards to track the scores of each putting hole
+        /// </summary>
+        /// <param name="puttingAreas">Array of putting holes to make cards for</param>
         public void CreateCards(PuttingArea[] puttingAreas)
         {
             cards = new ScoreCard[puttingAreas.Length];
@@ -37,6 +41,9 @@ namespace Minigolf.Putting.Game
             onTallyFinalPar?.Invoke(totalPar);
         }
 
+        /// <summary>
+        /// Resets score for a new putting game
+        /// </summary>
         public void StartNewPuttingGame()
         {
             ClearScores();
@@ -44,17 +51,27 @@ namespace Minigolf.Putting.Game
             onActivateCard?.Invoke(currentCardIndex);
         }
 
+        /// <summary>
+        /// Start tracking the score of the next hole
+        /// </summary>
         public void NextCard()
         {
             currentCardIndex++;
             onActivateCard?.Invoke(currentCardIndex);
         }
 
+        /// <summary>
+        /// Complete the score record of the current hole
+        /// </summary>
         public void CompleteCurrentCard()
         {
             onDeactivateCard?.Invoke(currentCardIndex);
         }
 
+
+        /// <summary>
+        /// Increment the number of hits for the current hole
+        /// </summary>
         public void IncrementCardHits()
         {
             cards[currentCardIndex].Hits++;
@@ -63,8 +80,13 @@ namespace Minigolf.Putting.Game
             onUpdateFinalScore?.Invoke(finalScore);
         }
 
+        /// <summary>
+        /// Clear all previous game scores
+        /// </summary>
         public void ClearScores()
         {
+            CompleteCurrentCard();
+
             for (int i = 0;i < cards.Length;i++)
             {
                 cards[i].Hits = 0;
