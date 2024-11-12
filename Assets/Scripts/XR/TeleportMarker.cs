@@ -15,7 +15,7 @@ namespace Minigolf.XR
 
         [SerializeField]
         private MatchOrientation matchOrientation;
-       
+
         /// <summary>
         /// Generate a Teleportation Request to the destination position
         /// </summary>
