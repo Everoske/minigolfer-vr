@@ -1,4 +1,5 @@
 using Minigolf.Putting.Interactable;
+using Minigolf.XR;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,9 @@ namespace Minigolf.Putting.Hole
         [SerializeField]
         private StartingArea startingArea;
 
+        [SerializeField]
+        private TeleportMarker teleportMarker;
+
         public int Par => holePar;
 
         public PuttingHole Hole => hole;
@@ -25,6 +29,9 @@ namespace Minigolf.Putting.Hole
         private bool hasStarted = false;
         public bool HasStarted => hasStarted;
 
+        /// <summary>
+        /// Starts tracking the number of hits for this hole
+        /// </summary>
         public void StartHole()
         {
             if (!isActive) return;
@@ -37,6 +44,14 @@ namespace Minigolf.Putting.Hole
         {
             isActive = true;
             hasStarted = false;
+        }
+
+        /// <summary>
+        /// Teleport player to the hole's TeleportMarker
+        /// </summary>
+        public void TeleportToHole()
+        {
+            teleportMarker.TeleportToMarker();
         }
     }
 }

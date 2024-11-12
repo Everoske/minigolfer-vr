@@ -1,5 +1,6 @@
 using Minigolf.Putting.Hole;
 using Minigolf.Putting.Interactable;
+using Minigolf.XR;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -21,6 +22,9 @@ namespace Minigolf.Putting.Game
 
         [SerializeField]
         private GameObject restartButton;
+
+        [SerializeField]
+        private TeleportMarker startTeleportMarker;
 
         public UnityAction onStartPuttingGame;
         public UnityAction onEndPuttingGame;
@@ -238,7 +242,7 @@ namespace Minigolf.Putting.Game
         {
             if (!gameActive) return;
 
-            Debug.Log($"Teleporting to hole: {currentIndex + 1}");
+            puttingAreas[currentIndex].TeleportToHole();
         }
 
         /// <summary>
@@ -246,7 +250,7 @@ namespace Minigolf.Putting.Game
         /// </summary>
         public void TeleportToStart()
         {
-            Debug.Log($"Teleporting player to start.");
+            startTeleportMarker.TeleportToMarker();
         }
     }
 }

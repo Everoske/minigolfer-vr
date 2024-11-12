@@ -36257,6 +36257,53 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &777815384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 777815385}
+  - component: {fileID: 777815386}
+  m_Layer: 0
+  m_Name: Hole 1 Teleport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &777815385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777815384}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4, y: 0, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1649336971}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &777815386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777815384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1306351d6c9d943aa2bdc903053e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportProvider: {fileID: 422520337}
+  destination: {fileID: 777815385}
+  matchOrientation: 2
 --- !u!1001 &779734518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58588,6 +58635,7 @@ MonoBehaviour:
   holePar: 3
   hole: {fileID: 1812290206}
   startingArea: {fileID: 1120986265}
+  teleportMarker: {fileID: 1977162105}
 --- !u!1 &1214681427
 GameObject:
   m_ObjectHideFlags: 0
@@ -62318,6 +62366,7 @@ MonoBehaviour:
   holePar: 2
   hole: {fileID: 891238124}
   startingArea: {fileID: 1630928599}
+  teleportMarker: {fileID: 777815386}
 --- !u!1001 &1315141366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78392,6 +78441,53 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1565826244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565826245}
+  - component: {fileID: 1565826246}
+  m_Layer: 0
+  m_Name: Hole 2 Teleport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1565826245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565826244}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 7, y: 0, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1649336971}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1565826246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565826244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1306351d6c9d943aa2bdc903053e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportProvider: {fileID: 422520337}
+  destination: {fileID: 1565826245}
+  matchOrientation: 2
 --- !u!1001 &1569061842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83789,6 +83885,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1378479033}
+  - {fileID: 777815385}
+  - {fileID: 1565826245}
+  - {fileID: 1977162104}
   m_Father: {fileID: 1768641470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1649688116
@@ -87614,6 +87713,7 @@ MonoBehaviour:
   holePar: 4
   hole: {fileID: 2100314067}
   startingArea: {fileID: 1846313436}
+  teleportMarker: {fileID: 1565826246}
 --- !u!1001 &1714063426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92908,6 +93008,7 @@ MonoBehaviour:
   endScreenUI: {fileID: 602603412}
   startButton: {fileID: 1133055663}
   restartButton: {fileID: 2113670275}
+  startTeleportMarker: {fileID: 1378479034}
   golfBallPrefab: {fileID: 3334206106426155426, guid: eff6e04a0020ee3478df3976830acdb3,
     type: 3}
 --- !u!1001 &1801032342
@@ -102831,6 +102932,53 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1977162103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977162104}
+  - component: {fileID: 1977162105}
+  m_Layer: 0
+  m_Name: 'Hole 3 Teleport '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1977162104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977162103}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1649336971}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1977162105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977162103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1306351d6c9d943aa2bdc903053e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportProvider: {fileID: 422520337}
+  destination: {fileID: 1977162104}
+  matchOrientation: 2
 --- !u!1 &1980475704 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4495679931949212480, guid: 3c8b0b120ce2b734c9ace721f179eb17,
