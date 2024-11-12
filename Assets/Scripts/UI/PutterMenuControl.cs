@@ -1,6 +1,7 @@
 using Minigolf.Putting.Game;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,12 +12,16 @@ namespace Minigolf.UI
         [SerializeField]
         private PuttingGame puttingGame;
 
+        [Header("Teleportation and Restart Buttons")]
         [SerializeField]
         private Button teleportButton;
         [SerializeField]
         private Button toStartButton;
         [SerializeField]
         private Button restartButton;
+
+        [SerializeField]
+        private TMP_Text currentHoleText;
 
         private void Start()
         {
@@ -27,6 +32,7 @@ namespace Minigolf.UI
         {
             puttingGame.onStartPuttingGame += SetGameActive;
             puttingGame.onEndPuttingGame += SetNoGame;
+            puttingGame.onActivateHole += SetCurrentHole;
 
             teleportButton.onClick.AddListener(puttingGame.TeleportToCurrentHole);
             toStartButton.onClick.AddListener(puttingGame.TeleportToStart);
@@ -37,6 +43,7 @@ namespace Minigolf.UI
         {
             puttingGame.onStartPuttingGame -= SetGameActive;
             puttingGame.onEndPuttingGame -= SetNoGame;
+            puttingGame.onActivateHole -= SetCurrentHole;
 
             teleportButton.onClick.RemoveAllListeners();
             toStartButton.onClick.RemoveAllListeners();
@@ -61,6 +68,17 @@ namespace Minigolf.UI
             toStartButton.gameObject.SetActive(true);
             restartButton.gameObject.SetActive(false);
             teleportButton.gameObject.SetActive(false);
+
+            currentHoleText.text = string.Empty;
+        }
+
+        /// <summary>
+        /// Sets the Current Hole text field to reflect the currently active hole
+        /// </summary>
+        /// <param name="holeNumber"></param>
+        private void SetCurrentHole(int holeNumber)
+        {
+            currentHoleText.text = $"Current Hole: {holeNumber}";
         }
     }
 }

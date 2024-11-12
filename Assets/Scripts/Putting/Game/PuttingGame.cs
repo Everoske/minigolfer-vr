@@ -24,6 +24,7 @@ namespace Minigolf.Putting.Game
 
         public UnityAction onStartPuttingGame;
         public UnityAction onEndPuttingGame;
+        public UnityAction<int> onActivateHole;
 
         private int currentIndex = 0;
 
@@ -124,6 +125,7 @@ namespace Minigolf.Putting.Game
         /// </summary>
         private void ActivateCurrentHole()
         {
+            onActivateHole?.Invoke(currentIndex + 1);
             puttingAreas[currentIndex].ActivatePuttingArea();
             puttingAreas[currentIndex].StartingArea.onLeftStartingArea += StartCurrentHole;
             puttingAreas[currentIndex].Hole.onHoleComplete += CompleteHole;
