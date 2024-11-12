@@ -238,5 +238,13 @@ namespace Minigolf.Putting.Game
 
             Debug.Log($"Teleporting to hole: {currentIndex + 1}");
         }
+
+        /// <summary>
+        /// Teleport the player to the starting area
+        /// </summary>
+        public void TeleportToStart()
+        {
+            Debug.Log($"Teleporting player to start.");
+        }
     }
 }

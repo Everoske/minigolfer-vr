@@ -106353,6 +106353,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 901284424}
     m_Modifications:
+    - target: {fileID: 415780796790213172, guid: f80d0599ad7682c4ab49411c6587c6d7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415780796790213172, guid: f80d0599ad7682c4ab49411c6587c6d7,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415780796790213172, guid: f80d0599ad7682c4ab49411c6587c6d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 415780796790213172, guid: f80d0599ad7682c4ab49411c6587c6d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1548422926991941082, guid: f80d0599ad7682c4ab49411c6587c6d7,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -106458,6 +106478,11 @@ PrefabInstance:
       propertyPath: puttingScore
       value: 
       objectReference: {fileID: 200565282}
+    - target: {fileID: 3883740058756976782, guid: f80d0599ad7682c4ab49411c6587c6d7,
+        type: 3}
+      propertyPath: puttingGame
+      value: 
+      objectReference: {fileID: 1800183928}
     - target: {fileID: 4115591340335409164, guid: f80d0599ad7682c4ab49411c6587c6d7,
         type: 3}
       propertyPath: m_AnchorMax.y
