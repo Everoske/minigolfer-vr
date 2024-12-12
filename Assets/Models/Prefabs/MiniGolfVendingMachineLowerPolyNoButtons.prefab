@@ -1,0 +1,544 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4428845757323794768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4783820605981900767}
+  - component: {fileID: 7339132519044161325}
+  - component: {fileID: 5652260775708630927}
+  m_Layer: 0
+  m_Name: MiniGolfVendingMachineLowerPolyNoButtons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4783820605981900767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428845757323794768}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7799905673914364318}
+  - {fileID: 7419887562276882421}
+  - {fileID: 1180701579552891556}
+  - {fileID: 7646536918648069903}
+  - {fileID: 8943087458229660375}
+  - {fileID: 9040459958828668612}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7339132519044161325
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428845757323794768}
+  m_Mesh: {fileID: -3030670172418806958, guid: 177e1e52507a4c241bbae651ce8df435, type: 3}
+--- !u!23 &5652260775708630927
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428845757323794768}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8d1c6f18417e08c459bdeef41b46c527, type: 2}
+  - {fileID: -4540768445591771869, guid: 177e1e52507a4c241bbae651ce8df435, type: 3}
+  - {fileID: -5227633477250115223, guid: 177e1e52507a4c241bbae651ce8df435, type: 3}
+  - {fileID: 2100000, guid: 412c251061b891c4bab1ebf9ad77bffc, type: 2}
+  - {fileID: 2100000, guid: c4877a7aa6aa5834897fb67dd14c24c3, type: 2}
+  - {fileID: 2100000, guid: 68d45b742f97c804fa1c7eaa4c0d852a, type: 2}
+  - {fileID: 2100000, guid: 16be91c9499cfed49811a66f8009d947, type: 2}
+  - {fileID: 2100000, guid: b4c1e846dec3ee640831038304abad5c, type: 2}
+  - {fileID: 2100000, guid: 8d49b18c1b1e19b45bdca7aabb71c213, type: 2}
+  - {fileID: 2100000, guid: 701674890499c274c9764a3ee5fa7926, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &4377672223912710626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4783820605981900767}
+    m_Modifications:
+    - target: {fileID: 2100244745520752263, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_Name
+      value: Vending Button (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.415
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.715
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1237
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0fe65b4fb1d99c445b9f1698a60e6004, type: 3}
+--- !u!4 &1180701579552891556 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+    type: 3}
+  m_PrefabInstance: {fileID: 4377672223912710626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4655869375053513432
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4783820605981900767}
+    m_Modifications:
+    - target: {fileID: 2100244745520752263, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_Name
+      value: Vending Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.715
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1237
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0fe65b4fb1d99c445b9f1698a60e6004, type: 3}
+--- !u!4 &7799905673914364318 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+    type: 3}
+  m_PrefabInstance: {fileID: 4655869375053513432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5098031576692485193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4783820605981900767}
+    m_Modifications:
+    - target: {fileID: 2100244745520752263, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_Name
+      value: Vending Button (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.415
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.179
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1237
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0fe65b4fb1d99c445b9f1698a60e6004, type: 3}
+--- !u!4 &7646536918648069903 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+    type: 3}
+  m_PrefabInstance: {fileID: 5098031576692485193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5357753078618338483
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4783820605981900767}
+    m_Modifications:
+    - target: {fileID: 2100244745520752263, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_Name
+      value: Vending Button (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.179
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1237
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0fe65b4fb1d99c445b9f1698a60e6004, type: 3}
+--- !u!4 &7419887562276882421 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+    type: 3}
+  m_PrefabInstance: {fileID: 5357753078618338483}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5818112834115000721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4783820605981900767}
+    m_Modifications:
+    - target: {fileID: 2100244745520752263, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_Name
+      value: Vending Button (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.415
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.715
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1237
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0fe65b4fb1d99c445b9f1698a60e6004, type: 3}
+--- !u!4 &8943087458229660375 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+    type: 3}
+  m_PrefabInstance: {fileID: 5818112834115000721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5896344452283721090
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4783820605981900767}
+    m_Modifications:
+    - target: {fileID: 2100244745520752263, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_Name
+      value: Vending Button (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.415
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.179
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1237
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0fe65b4fb1d99c445b9f1698a60e6004, type: 3}
+--- !u!4 &9040459958828668612 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3216181896796402502, guid: 0fe65b4fb1d99c445b9f1698a60e6004,
+    type: 3}
+  m_PrefabInstance: {fileID: 5896344452283721090}
+  m_PrefabAsset: {fileID: 0}
