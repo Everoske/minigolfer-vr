@@ -6,21 +6,30 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Minigolf.XR
 {
+    /// <summary>
+    /// Pressable, worldspace VR button with onPressed and onReleased events.
+    /// </summary>
     public class PressableButton : MonoBehaviour
     {
+        [Tooltip("Visual part of button that gets pressed and released")]
         [SerializeField]
         private Transform visualComponent;
+        [Tooltip("Parent object of visual component")]
         [SerializeField]
         private Transform visualParent;
+        [Tooltip("Position where the button is fully pressed")]
         [SerializeField]
         private Vector3 localEndPosition;
 
+        [Tooltip("Percentage of distance where button is considered pressed")]
         [Range(0f, 1f)]
         [SerializeField]
         private float pressedThreshold = 0.15f;
 
+        [Tooltip("Time for the button to return to its default position")]
         [SerializeField]
         private float springBackTime = 0.5f;
+        [Tooltip("Reset time for triggering onPressed after the button has been released")]
         [SerializeField]
         private float deadtime = 0.25f;
 
@@ -39,6 +48,8 @@ namespace Minigolf.XR
         private bool canTriggerPressed = true;
 
         private float springCounter = 0.0f;
+
+        public bool IsPressed => isPressed;
 
         private void Awake()
         {
@@ -77,6 +88,12 @@ namespace Minigolf.XR
             CheckPressed();
         }
 
+        /// <summary>
+        /// Determines how much the visual component should move
+        /// based on the distance from a valid poke interactor
+        /// that is actively hovering over the XR Interactable
+        /// </summary>
+        /// <param name="hover">Hover event</param>
         private void HoverEntered(BaseInteractionEventArgs hover)
         {
             if (hover.interactorObject is XRPokeInteractor)
@@ -88,11 +105,19 @@ namespace Minigolf.XR
             }
         }
 
+        /// <summary>
+        /// Returns the button to its default state
+        /// </summary>
+        /// <param name="hover">Hover event</param>
         private void HoverExited(BaseInteractionEventArgs hover)
         {
             isInteracting = false;
         }
 
+        /// <summary>
+        /// Moves the visual component between its default and end positions
+        /// based on the distance from a poke interactor
+        /// </summary>
         private void MoveVisual()
         {
             Vector3 localTargetPosition = visualComponent.InverseTransformPoint(pokeTransform.position + movement);
@@ -100,6 +125,12 @@ namespace Minigolf.XR
             visualComponent.position = ClampedTargetPosition(visualComponent.TransformPoint(localTargetPosition));
         }
 
+        /// <summary>
+        /// Clamps a world position for the visual component between the
+        /// default and end positions
+        /// </summary>
+        /// <param name="targetPosition">World position to move visual to</param>
+        /// <returns>Clamped world position for visual</returns>
         private Vector3 ClampedTargetPosition(Vector3 targetPosition)
         {
             Vector3 defaultPosition = visualParent.TransformPoint(localDefaultPosition);
@@ -126,6 +157,9 @@ namespace Minigolf.XR
             return new Vector3(x, y, z);
         }
 
+        /// <summary>
+        /// Returns the visual component to its default position over time
+        /// </summary>
         private void SpringBack()
         {
             springCounter += Time.deltaTime;
@@ -138,6 +172,11 @@ namespace Minigolf.XR
             }
         }
 
+        /// <summary>
+        /// Determines if the button is pressed or released based on the 
+        /// distance of the visual component to the end position. Invokes
+        /// onPressed and onReleased when applicable
+        /// </summary>
         private void CheckPressed()
         {
             float percentDistance = 
@@ -163,6 +202,12 @@ namespace Minigolf.XR
             }
         }
 
+        /// <summary>
+        /// Resets the ability for the button to trigger its onPressed
+        /// event after a certain amount of time has passed since it
+        /// was released
+        /// </summary>
+        /// <returns>Coroutine</returns>
         private IEnumerator ProcessDeadtime()
         {
             yield return new WaitForSeconds(deadtime);
