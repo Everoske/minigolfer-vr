@@ -1,6 +1,4 @@
 using Minigolf.Putting.Interactable;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Minigolf.XR

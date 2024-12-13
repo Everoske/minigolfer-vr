@@ -79,6 +79,14 @@ namespace Minigolf.Putting.Game
         {
             if (puttingAreas.Length <= 0 || gameActive) return;
 
+            if (golfBallPrefab == null)
+            {
+                // Display message to player that they cannot start the 
+                // putting game without a ball
+                Debug.Log("Cannot start putting game without ball");
+                return;
+            }
+
             gameActive = true;
             currentIndex = 0;
             puttingScore.StartNewPuttingGame();
