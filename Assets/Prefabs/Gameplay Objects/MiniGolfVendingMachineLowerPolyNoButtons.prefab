@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &987984986721292308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5288730336171554313}
+  m_Layer: 0
+  m_Name: Spawn Ball
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5288730336171554313
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987984986721292308}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: -0.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7420319451609726552}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7641020799231667704
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +43,7 @@ GameObject:
   - component: {fileID: 5099217514958141813}
   - component: {fileID: 9125395949528760310}
   - component: {fileID: 915472938494957240}
+  - component: {fileID: 2055687018502628059}
   m_Layer: 0
   m_Name: MiniGolfVendingMachineLowerPolyNoButtons
   m_TagString: Untagged
@@ -38,6 +70,7 @@ Transform:
   - {fileID: 7714876971437135168}
   - {fileID: 8208595276247817584}
   - {fileID: 2490885681140434089}
+  - {fileID: 5288730336171554313}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5099217514958141813
@@ -121,6 +154,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3030670172418806958, guid: 177e1e52507a4c241bbae651ce8df435, type: 3}
+--- !u!114 &2055687018502628059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7641020799231667704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0113ab5e807c38a40aaa21cad79be9d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnLocation: {fileID: 5288730336171554313}
 --- !u!1001 &1250621569857814780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -183,6 +229,47 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2055687018502628059}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SpawnBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Minigolf.XR.BallSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3334206106426155426, guid: eff6e04a0020ee3478df3976830acdb3,
+        type: 3}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -258,6 +345,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2055687018502628059}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SpawnBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Minigolf.XR.BallSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3334206106426155426, guid: 637638f62df38c5449585c7a975d2e8b,
+        type: 3}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -332,11 +460,99 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onReleased.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2055687018502628059}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2730070413932279791}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SpawnBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onReleased.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onReleased.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_material
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Minigolf.XR.BallSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onReleased.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Renderer, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3334206106426155426, guid: 43fdfdfa308c85143ac474ef23a791f4,
+        type: 3}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: -5227633477250115223, guid: 177e1e52507a4c241bbae651ce8df435,
+        type: 3}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Material, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a9148318fda73a41af7d4df9063089a, type: 3}
+--- !u!23 &2730070413932279791 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1810677168109033663, guid: 9a9148318fda73a41af7d4df9063089a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4378617973979492176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7714876971437135168 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6328479295797344784, guid: 9a9148318fda73a41af7d4df9063089a,
@@ -405,6 +621,47 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2055687018502628059}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SpawnBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Minigolf.XR.BallSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3334206106426155426, guid: 37a7d823577852e418bc8fa224ae8e4b,
+        type: 3}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -480,6 +737,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2055687018502628059}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SpawnBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Minigolf.XR.BallSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3334206106426155426, guid: f60fcac8746a5794a8a6cc01e635ee20,
+        type: 3}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -553,6 +851,47 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2055687018502628059}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SpawnBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Minigolf.XR.BallSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 3334206106426155426, guid: 911d14485f8edc545963d0ae128ca8ad,
+        type: 3}
+    - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
+        type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
