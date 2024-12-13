@@ -23,6 +23,7 @@ namespace Minigolf.Putting.Interactable
         private float despawnTimer = 0f;
 
         private XRGrabInteractable interactable;
+        private MeshRenderer meshRenderer;
 
         public UnityAction onBallHit;
 
@@ -39,6 +40,7 @@ namespace Minigolf.Putting.Interactable
         private void Awake()
         {
             interactable = GetComponent<XRGrabInteractable>();
+            meshRenderer = GetComponent<MeshRenderer>();
         }
 
         private void OnEnable()
@@ -71,6 +73,24 @@ namespace Minigolf.Putting.Interactable
             }
 
             despawnTimer = 0.0f;
+        }
+
+        /// <summary>
+        /// Assigns a material to the golf ball
+        /// </summary>
+        /// <param name="materialToAssign">Golf ball material</param>
+        public void AssignMaterial(Material materialToAssign)
+        {
+            meshRenderer.material = materialToAssign;
+        }
+
+        /// <summary>
+        /// Returns the ball's assigned material
+        /// </summary>
+        /// <returns>Mini Golf Ball's material</returns>
+        public Material GetAssignedMaterial()
+        {
+            return meshRenderer.material;
         }
 
         /// <summary>

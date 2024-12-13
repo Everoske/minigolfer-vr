@@ -15,6 +15,9 @@ namespace Minigolf.Putting.Game
         private PuttingScore puttingScore;
 
         [SerializeField]
+        private PuttingPlayer puttingPlayer;
+
+        [SerializeField]
         private GameObject endScreenUI;
 
         [SerializeField]
@@ -26,6 +29,8 @@ namespace Minigolf.Putting.Game
         [SerializeField]
         private TeleportMarker startTeleportMarker;
 
+        
+
         public UnityAction onStartPuttingGame;
         public UnityAction onEndPuttingGame;
         public UnityAction<int> onActivateHole;
@@ -35,17 +40,6 @@ namespace Minigolf.Putting.Game
         private bool gameActive = false;
 
         private bool ballHitOnStart = false;
-
-        /*
-         * TODO: This will become a private variable later on.
-         * The player will select the color of Golf Ball before starting the game.
-         * Once they confirm their selection, that ball's prefab will be assigned 
-         * here which will be spawned for each putting area
-         */
-        [SerializeField]
-        private GolfBall golfBallPrefab;
-
-        private GolfBall playerGolfBall = null;
 
         private void Start()
         {
@@ -79,7 +73,7 @@ namespace Minigolf.Putting.Game
         {
             if (puttingAreas.Length <= 0 || gameActive) return;
 
-            if (golfBallPrefab == null)
+            if (!puttingPlayer.HasGolfBall())
             {
                 // Display message to player that they cannot start the 
                 // putting game without a ball
@@ -96,6 +90,8 @@ namespace Minigolf.Putting.Game
             restartButton.SetActive(true);
 
             onStartPuttingGame?.Invoke();
+
+            puttingPlayer.SetCanChangeBall(false);
 
             ActivateCurrentHole();
         }
@@ -164,6 +160,7 @@ namespace Minigolf.Putting.Game
         {
             DespawnBall();
             gameActive = false;
+            puttingPlayer.SetCanChangeBall(true);
 
             endScreenUI.SetActive(true);
             startButton.SetActive(true);
@@ -218,12 +215,7 @@ namespace Minigolf.Putting.Game
         /// </summary>
         private void DespawnBall()
         {
-            if (playerGolfBall == null) return;
-
-            playerGolfBall.onBallHit -= HandleBallHit;
-
-            Destroy(playerGolfBall.gameObject);
-            playerGolfBall = null;
+            puttingPlayer.DespawnBall(HandleBallHit);
         }
 
         /// <summary>
@@ -234,13 +226,7 @@ namespace Minigolf.Putting.Game
         {
             if (!gameActive) return;
 
-            if (playerGolfBall != null)
-            {
-                DespawnBall();
-            }
-
-            playerGolfBall = Instantiate(golfBallPrefab, position, Quaternion.identity);
-            playerGolfBall.onBallHit += HandleBallHit;
+            puttingPlayer.SpawnBall(position, HandleBallHit);
         }
 
         /// <summary>

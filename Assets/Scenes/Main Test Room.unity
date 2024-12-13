@@ -31882,6 +31882,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3317407170006106651, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
+      propertyPath: ballPrefab
+      value: 
+      objectReference: {fileID: 3334206106426155426, guid: e9fc9f11a21c68441bf454631749078f,
+        type: 3}
+    - target: {fileID: 3317407170006106651, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
       propertyPath: interactionManager
       value: 
       objectReference: {fileID: 1592225562}
@@ -76658,6 +76664,18 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1544435263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3317407170006106651, guid: 11bca625443cca74d8c62ab39802a729,
+    type: 3}
+  m_PrefabInstance: {fileID: 685518679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72064098387018d42ae6cb112bc9c338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1544936812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93088,12 +93106,11 @@ MonoBehaviour:
   - {fileID: 1713474167}
   - {fileID: 1210625679}
   puttingScore: {fileID: 200565282}
+  puttingPlayer: {fileID: 1544435263}
   endScreenUI: {fileID: 602603412}
   startButton: {fileID: 1133055663}
   restartButton: {fileID: 2113670275}
   startTeleportMarker: {fileID: 1378479034}
-  golfBallPrefab: {fileID: 3334206106426155426, guid: eff6e04a0020ee3478df3976830acdb3,
-    type: 3}
 --- !u!1001 &1801032342
 PrefabInstance:
   m_ObjectHideFlags: 0
