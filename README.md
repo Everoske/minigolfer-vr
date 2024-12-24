@@ -56,7 +56,6 @@ This game is not play ready, see version 1.0 features for intended features and 
 - Core gameplay loop completed.
 - Poke, Direct, and Ray VR Interactions.
 - Teleport, Continuous, and Headtracking Locomotion.
-- Ability for Player to
 - Player Hand Menu Interface.
 - Score tracking and Scoreboard.
 - Ability to View Game Progress, Teleport to Current Hole, and Restart Game from Hand Menu.
