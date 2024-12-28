@@ -65,7 +65,7 @@ This game is not play ready, see version 1.0 features for intended features and 
 - Golf ball mesh and seven unique colors.
 
 #### Remaining Work 
-- 1: VR character controller and collision handling.
+- 1: VR character controller and collision handling (see feature-character-controller for progress).
 - 2: Player body sockets.
 - 3: Game start sequence.
 - 4: Improved putting physics.
