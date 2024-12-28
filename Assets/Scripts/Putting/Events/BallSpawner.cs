@@ -10,17 +10,14 @@ namespace Minigolf.XR
     {
         [SerializeField]
         private Transform[] ballSpawns;
-        [SerializeField]
-        private GolfBall golfBallPrefab;
 
         /// <summary>
-        /// Spawns a golf ball and assigns it a material
+        /// Spawns a golf ball
         /// </summary>
-        /// <param name="assignedMaterial">Material to assign golf ball</param>
-        public void SpawnBall(Material assignedMaterial)
+        /// <param name="ball">Golf Ball Prefab to Spawn</param>
+        public void SpawnBall(GolfBall ball)
         {
-            GolfBall ball = Instantiate(golfBallPrefab, RandomSpawnLocation());
-            ball.AssignMaterial(assignedMaterial);
+            Instantiate(ball, RandomSpawnLocation());
         }
 
         /// <summary>

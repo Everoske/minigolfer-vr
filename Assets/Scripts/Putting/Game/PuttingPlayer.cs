@@ -30,6 +30,8 @@ namespace Minigolf.Putting.Game
         [SerializeField]
         private InputAction leftGripPressed;
 
+        public UnityAction<GolfBall, bool> onBallChanged;
+
         private GolfPutter spawnedPutter;
         private GolfBall spawnedBall;
         private Material assignedMaterial;
@@ -144,6 +146,7 @@ namespace Minigolf.Putting.Game
                 heldBall.IsAssigned = true;
                 spawnedBall = heldBall;
                 assignedMaterial = heldBall.GetAssignedMaterial();
+                onBallChanged?.Invoke(heldBall, true);
             }
         }
 

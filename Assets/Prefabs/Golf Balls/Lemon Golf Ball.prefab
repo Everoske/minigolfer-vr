@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3399093075178218498}
   - component: {fileID: 3334206106426155426}
   m_Layer: 0
-  m_Name: Base Golf Ball
+  m_Name: Lemon Golf Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4877a7aa6aa5834897fb67dd14c24c3, type: 2}
+  - {fileID: 2100000, guid: 088d384d48da60847952f62c7ada2005, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -301,4 +301,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitCooldownTime: 1
   unassignedDespawnTime: 120
-  uiIcon: {fileID: -482659144, guid: a51ba7a3f62020348bf98a7f44e9570d, type: 3}
+  uiIcon: {fileID: -546714909, guid: a51ba7a3f62020348bf98a7f44e9570d, type: 3}

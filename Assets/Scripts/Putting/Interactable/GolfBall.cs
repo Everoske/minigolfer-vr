@@ -15,6 +15,8 @@ namespace Minigolf.Putting.Interactable
         private float hitCooldownTime = 1f;
         [SerializeField]
         private float unassignedDespawnTime = 120f;
+        [SerializeField]
+        private Sprite uiIcon;
 
         private bool canBeHit = true;
         private bool isAssigned = false;
@@ -35,6 +37,12 @@ namespace Minigolf.Putting.Interactable
                 isAssigned = value;
                 despawnTimer = 0.0f;
             }
+        }
+
+        public Sprite UIIcon
+        {
+            get => uiIcon;
+            set => uiIcon = value;
         }
 
         private void Awake()
