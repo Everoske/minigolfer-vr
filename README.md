@@ -59,10 +59,14 @@ This game is not play ready, see version 1.0 features for intended features and 
 - Player Hand Menu Interface.
 - Score tracking and Scoreboard.
 - Ability to View Game Progress, Teleport to Current Hole, and Restart Game from Hand Menu.
+- Ball selection mechanic.
+- Mini Golf Ball Vending Machine.
+- Pushable VR buttons.
+- Golf ball mesh and seven unique colors.
 
 #### Remaining Work 
-- 1: Ball selection (see feature-ball-selection branch for progress).
-- 2: VR character controller and collision handling.
+- 1: VR character controller and collision handling.
+- 2: Player body sockets.
 - 3: Game start sequence.
 - 4: Improved putting physics.
 - 5: Rework the start hole sequence.
