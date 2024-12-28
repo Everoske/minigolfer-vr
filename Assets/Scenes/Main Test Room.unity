@@ -17462,6 +17462,12 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!4 &368840881 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 373303358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &369927077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17852,6 +17858,74 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &373303358
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 507188649}
+    m_Modifications:
+    - target: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.22200203
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.899
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420319451609726552, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641020799231667704, guid: 7c17dd11c2aecd84b87105ab2c6da4f2,
+        type: 3}
+      propertyPath: m_Name
+      value: MiniGolfVendingMachineLowerPolyNoButtons
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7c17dd11c2aecd84b87105ab2c6da4f2, type: 3}
 --- !u!1001 &373365987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24140,6 +24214,38 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &507188648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 507188649}
+  m_Layer: 0
+  m_Name: Interactables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &507188649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507188648}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 368840881}
+  m_Father: {fileID: 1404224601}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &516264875 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5064123469060282144, guid: 11bca625443cca74d8c62ab39802a729,
@@ -31807,6 +31913,17 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1592225562}
+    - target: {fileID: 1843995676532187881, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3317407170006106651, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
+      propertyPath: ballPrefab
+      value: 
+      objectReference: {fileID: 3334206106426155426, guid: e9fc9f11a21c68441bf454631749078f,
+        type: 3}
     - target: {fileID: 3317407170006106651, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: interactionManager
@@ -31882,6 +31999,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1592225562}
+    - target: {fileID: 7245613423803492560, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 1342177280
+      objectReference: {fileID: 0}
     - target: {fileID: 8290658809780321455, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: m_InteractionManager
@@ -31902,6 +32024,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1592225562}
+    - target: {fileID: 8748183229476729520, guid: 11bca625443cca74d8c62ab39802a729,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 1342177280
+      objectReference: {fileID: 0}
     - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: m_InteractionManager
@@ -67753,6 +67880,7 @@ Transform:
   - {fileID: 871204220}
   - {fileID: 1214681428}
   - {fileID: 89746931}
+  - {fileID: 507188649}
   m_Father: {fileID: 87968138}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1413532887
@@ -76575,6 +76703,18 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1544435263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3317407170006106651, guid: 11bca625443cca74d8c62ab39802a729,
+    type: 3}
+  m_PrefabInstance: {fileID: 685518679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72064098387018d42ae6cb112bc9c338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1544936812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93005,12 +93145,11 @@ MonoBehaviour:
   - {fileID: 1713474167}
   - {fileID: 1210625679}
   puttingScore: {fileID: 200565282}
+  puttingPlayer: {fileID: 1544435263}
   endScreenUI: {fileID: 602603412}
   startButton: {fileID: 1133055663}
   restartButton: {fileID: 2113670275}
   startTeleportMarker: {fileID: 1378479034}
-  golfBallPrefab: {fileID: 3334206106426155426, guid: eff6e04a0020ee3478df3976830acdb3,
-    type: 3}
 --- !u!1001 &1801032342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106474,6 +106613,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1876534438429951409, guid: f80d0599ad7682c4ab49411c6587c6d7,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2265737688132025019, guid: f80d0599ad7682c4ab49411c6587c6d7,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -106544,6 +106688,11 @@ PrefabInstance:
       propertyPath: puttingGame
       value: 
       objectReference: {fileID: 1800183928}
+    - target: {fileID: 3883740058756976782, guid: f80d0599ad7682c4ab49411c6587c6d7,
+        type: 3}
+      propertyPath: puttingPlayer
+      value: 
+      objectReference: {fileID: 1544435263}
     - target: {fileID: 4115591340335409164, guid: f80d0599ad7682c4ab49411c6587c6d7,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -106594,6 +106743,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand Menu Origin
       objectReference: {fileID: 0}
+    - target: {fileID: 6239309109863851666, guid: f80d0599ad7682c4ab49411c6587c6d7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -482659144, guid: a51ba7a3f62020348bf98a7f44e9570d,
+        type: 3}
     - target: {fileID: 6628484425100645173, guid: f80d0599ad7682c4ab49411c6587c6d7,
         type: 3}
       propertyPath: playerCamera

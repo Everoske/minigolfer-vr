@@ -1480,6 +1480,7 @@ MonoBehaviour:
   interactionManager: {fileID: 0}
   putterPrefab: {fileID: 3979418456399677145, guid: 186d962c7a61c3d4faf5803c94fd1c43,
     type: 3}
+  ballPrefab: {fileID: 0}
   rDirectInteractor: {fileID: 1064257249552823133}
   lDirectInteractor: {fileID: 8290658809780321455}
   teleportInteractor: {fileID: 5064123469060282144}

@@ -95,10 +95,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puttingGame: {fileID: 0}
+  puttingPlayer: {fileID: 0}
   teleportButton: {fileID: 9091100060149463759}
   toStartButton: {fileID: 8427766584991204177}
   restartButton: {fileID: 32700563511053054}
   currentHoleText: {fileID: 8552130221696258858}
+  spawnBallButton: {fileID: 1876534438429951409}
+  spawnBallImage: {fileID: 6239309109863851666}
 --- !u!1001 &6085889490228545417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -881,6 +884,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1876534438429951409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5656422305119371832, guid: ba9b189beda0cb84a9fcd325d9323290,
+    type: 3}
+  m_PrefabInstance: {fileID: 6085889490228545417}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3735508924035790535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7467634125972664654, guid: ba9b189beda0cb84a9fcd325d9323290,
@@ -909,6 +924,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6239309109863851666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 208034932391420187, guid: ba9b189beda0cb84a9fcd325d9323290,
+    type: 3}
+  m_PrefabInstance: {fileID: 6085889490228545417}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8427766584991204177 stripped
