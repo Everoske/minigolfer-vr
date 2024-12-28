@@ -1,3 +1,4 @@
+using Minigolf.Scriptable;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,7 @@ namespace Minigolf.Putting.Interactable
         [SerializeField]
         private float unassignedDespawnTime = 120f;
         [SerializeField]
-        private Sprite uiIcon;
+        private GolfBallTemplate template;
 
         private bool canBeHit = true;
         private bool isAssigned = false;
@@ -39,10 +40,14 @@ namespace Minigolf.Putting.Interactable
             }
         }
 
-        public Sprite UIIcon
+        public GolfBallTemplate Template
         {
-            get => uiIcon;
-            set => uiIcon = value;
+            get => template;
+            set  
+            { 
+                template = value;
+                meshRenderer.material = template.material;
+            }
         }
 
         private void Awake()

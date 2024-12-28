@@ -1,4 +1,5 @@
 using Minigolf.Putting.Interactable;
+using Minigolf.Scriptable;
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -30,11 +31,11 @@ namespace Minigolf.Putting.Game
         [SerializeField]
         private InputAction leftGripPressed;
 
-        public UnityAction<GolfBall, bool> onBallChanged;
+        public UnityAction<GolfBallTemplate, bool> onBallChanged;
 
         private GolfPutter spawnedPutter;
         private GolfBall spawnedBall;
-        private Material assignedMaterial;
+        private GolfBallTemplate assignedGBTemplate;
 
         private bool canChangeBall = true;
 
@@ -90,7 +91,7 @@ namespace Minigolf.Putting.Game
         /// <returns></returns>
         public bool HasGolfBall()
         {
-            return assignedMaterial != null;
+            return assignedGBTemplate != null;
         }
 
         /// <summary>
@@ -101,7 +102,7 @@ namespace Minigolf.Putting.Game
         /// <param name="onHitEvent">Event triggered when ball hit</param>
         public void SpawnBall(Vector3 position, UnityAction onHitEvent)
         {
-            if (assignedMaterial == null) return;
+            if (assignedGBTemplate == null) return;
 
             if (spawnedBall != null)
             {
@@ -109,7 +110,7 @@ namespace Minigolf.Putting.Game
             }
 
             spawnedBall = Instantiate(ballPrefab, position, Quaternion.identity);
-            spawnedBall.AssignMaterial(assignedMaterial);
+            spawnedBall.AssignMaterial(assignedGBTemplate.material);
             spawnedBall.onBallHit += onHitEvent;
             spawnedBall.IsAssigned = true;
         }
@@ -145,8 +146,8 @@ namespace Minigolf.Putting.Game
 
                 heldBall.IsAssigned = true;
                 spawnedBall = heldBall;
-                assignedMaterial = heldBall.GetAssignedMaterial();
-                onBallChanged?.Invoke(heldBall, true);
+                assignedGBTemplate = heldBall.Template;
+                onBallChanged?.Invoke(heldBall.Template, true);
             }
         }
 

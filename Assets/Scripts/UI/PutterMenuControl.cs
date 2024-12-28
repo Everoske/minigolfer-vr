@@ -1,5 +1,6 @@
 using Minigolf.Putting.Game;
 using Minigolf.Putting.Interactable;
+using Minigolf.Scriptable;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -97,11 +98,11 @@ namespace Minigolf.UI
         /// <summary>
         /// Sets the Spawn Ball Button image to match the player's current ball
         /// </summary>
-        /// <param name="ball">Player's selected golf ball</param>
+        /// <param name="template">Player's selected golf ball template</param>
         /// <param name="active">Determines whether the spawn ball button is interactable</param>
-        private void ChangeBallIcon(GolfBall ball, bool active)
+        private void ChangeBallIcon(GolfBallTemplate template, bool active)
         {
-            spawnBallImage.sprite = ball.UIIcon;
+            spawnBallImage.sprite = template.icon;
             spawnBallButton.interactable = active;
         }
     }

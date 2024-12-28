@@ -1,4 +1,5 @@
 using Minigolf.Putting.Interactable;
+using Minigolf.Scriptable;
 using UnityEngine;
 
 namespace Minigolf.XR
@@ -10,14 +11,17 @@ namespace Minigolf.XR
     {
         [SerializeField]
         private Transform[] ballSpawns;
+        [SerializeField]
+        private GolfBall golfBallPrefab;
 
         /// <summary>
-        /// Spawns a golf ball
+        /// Spawns a Golf Ball
         /// </summary>
-        /// <param name="ball">Golf Ball Prefab to Spawn</param>
-        public void SpawnBall(GolfBall ball)
+        /// <param name="template">Golf ball template for ball</param>
+        public void SpawnBall(GolfBallTemplate template)
         {
-            Instantiate(ball, RandomSpawnLocation());
+            GolfBall ball = Instantiate(golfBallPrefab, RandomSpawnLocation());
+            ball.Template = template;
         }
 
         /// <summary>

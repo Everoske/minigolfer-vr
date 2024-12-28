@@ -266,6 +266,8 @@ MonoBehaviour:
   - {fileID: 2293904684951002270}
   - {fileID: 7132565822735073491}
   - {fileID: 5920390045504227875}
+  golfBallPrefab: {fileID: 3334206106426155426, guid: e9fc9f11a21c68441bf454631749078f,
+    type: 3}
 --- !u!1 &7822307588994188203
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,12 +464,12 @@ PrefabInstance:
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 3334206106426155426, guid: a2f69f4140aede343b7c257d396f3caa,
-        type: 3}
+      objectReference: {fileID: 11400000, guid: 47dffa4633fef3d4db4391da5dcfcbbe,
+        type: 2}
     - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
+      value: Minigolf.Scriptable.GolfBallTemplate, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -577,12 +579,12 @@ PrefabInstance:
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 3334206106426155426, guid: c87d131d6a376844e911c1cb46e49201,
-        type: 3}
+      objectReference: {fileID: 11400000, guid: 346781a7d4c567846bde7c4f2f63536b,
+        type: 2}
     - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
+      value: Minigolf.Scriptable.GolfBallTemplate, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -722,8 +724,8 @@ PrefabInstance:
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 3334206106426155426, guid: 76795da1c8450f44b82d38f48ec5d8b5,
-        type: 3}
+      objectReference: {fileID: 11400000, guid: a19dc7a29b9fd2342a52a30653e9a18d,
+        type: 2}
     - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
         type: 3}
       propertyPath: onReleased.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -733,7 +735,7 @@ PrefabInstance:
     - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
+      value: Minigolf.Scriptable.GolfBallTemplate, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
         type: 3}
@@ -854,12 +856,12 @@ PrefabInstance:
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 3334206106426155426, guid: fa23ed2d7d39ee04bb264b1b546923aa,
-        type: 3}
+      objectReference: {fileID: 11400000, guid: bce34e0f6b0a1bf4d9465b3d1ddb4d7c,
+        type: 2}
     - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
+      value: Minigolf.Scriptable.GolfBallTemplate, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -969,12 +971,12 @@ PrefabInstance:
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 3334206106426155426, guid: 40dfdcfdaceab5d49aeccb2b2745ed86,
-        type: 3}
+      objectReference: {fileID: 11400000, guid: 19b66a64f7131fa409dc95566316f3d8,
+        type: 2}
     - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
+      value: Minigolf.Scriptable.GolfBallTemplate, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1084,12 +1086,12 @@ PrefabInstance:
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 3334206106426155426, guid: 0fa038ddff1152845babb70a03d8d539,
-        type: 3}
+      objectReference: {fileID: 11400000, guid: 2b9d8d2d0ad82ce4d90d8ff51ffecc32,
+        type: 2}
     - target: {fileID: 7076763984700980388, guid: 9a9148318fda73a41af7d4df9063089a,
         type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Minigolf.Putting.Interactable.GolfBall, Assembly-CSharp
+      value: Minigolf.Scriptable.GolfBallTemplate, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
