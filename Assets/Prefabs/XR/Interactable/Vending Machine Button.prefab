@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6328479295797344784}
   m_Layer: 0
-  m_Name: Vending Button Interactable
+  m_Name: Vending Machine Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

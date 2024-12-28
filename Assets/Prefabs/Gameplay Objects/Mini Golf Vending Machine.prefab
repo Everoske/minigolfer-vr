@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 915472938494957240}
   - component: {fileID: 2055687018502628059}
   m_Layer: 0
-  m_Name: MiniGolfVendingMachineLowerPolyNoButtons
+  m_Name: Mini Golf Vending Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
