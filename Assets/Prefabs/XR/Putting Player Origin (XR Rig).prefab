@@ -859,7 +859,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1073741824
+    m_Bits: 1342177280
   m_AttachTransform: {fileID: 480007559125978819}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -1480,7 +1480,8 @@ MonoBehaviour:
   interactionManager: {fileID: 0}
   putterPrefab: {fileID: 3979418456399677145, guid: 186d962c7a61c3d4faf5803c94fd1c43,
     type: 3}
-  ballPrefab: {fileID: 0}
+  ballPrefab: {fileID: 3334206106426155426, guid: e9fc9f11a21c68441bf454631749078f,
+    type: 3}
   rDirectInteractor: {fileID: 1064257249552823133}
   lDirectInteractor: {fileID: 8290658809780321455}
   teleportInteractor: {fileID: 5064123469060282144}
@@ -2486,7 +2487,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1073741824
+    m_Bits: 1342177280
   m_AttachTransform: {fileID: 4634726004314760972}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1

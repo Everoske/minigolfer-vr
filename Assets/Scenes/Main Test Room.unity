@@ -31892,38 +31892,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 103351987}
     m_Modifications:
-    - target: {fileID: 480007559125978819, guid: 11bca625443cca74d8c62ab39802a729,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 480007559125978819, guid: 11bca625443cca74d8c62ab39802a729,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 1024369359731961257, guid: 11bca625443cca74d8c62ab39802a729,
-        type: 3}
-      propertyPath: m_ModelPrefab
-      value: 
-      objectReference: {fileID: 8305787519370977974, guid: ede9e9f9006cdd04a84c1a15a7b9ce6b,
-        type: 3}
     - target: {fileID: 1064257249552823133, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1592225562}
-    - target: {fileID: 1843995676532187881, guid: 11bca625443cca74d8c62ab39802a729,
-        type: 3}
-      propertyPath: m_RequestedTrackingOriginMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3317407170006106651, guid: 11bca625443cca74d8c62ab39802a729,
-        type: 3}
-      propertyPath: ballPrefab
-      value: 
-      objectReference: {fileID: 3334206106426155426, guid: e9fc9f11a21c68441bf454631749078f,
-        type: 3}
     - target: {fileID: 3317407170006106651, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: interactionManager
@@ -31999,11 +31972,6 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1592225562}
-    - target: {fileID: 7245613423803492560, guid: 11bca625443cca74d8c62ab39802a729,
-        type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 1342177280
-      objectReference: {fileID: 0}
     - target: {fileID: 8290658809780321455, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: m_InteractionManager
@@ -32024,11 +31992,6 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1592225562}
-    - target: {fileID: 8748183229476729520, guid: 11bca625443cca74d8c62ab39802a729,
-        type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 1342177280
-      objectReference: {fileID: 0}
     - target: {fileID: 8761035015851077745, guid: 11bca625443cca74d8c62ab39802a729,
         type: 3}
       propertyPath: m_InteractionManager
