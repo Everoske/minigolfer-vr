@@ -859,7 +859,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1073741824
+    m_Bits: 1342177280
   m_AttachTransform: {fileID: 480007559125978819}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -1411,6 +1411,8 @@ GameObject:
   - component: {fileID: 1843995676532187881}
   - component: {fileID: 1429206203611921567}
   - component: {fileID: 3317407170006106651}
+  - component: {fileID: 2620005093490609679}
+  - component: {fileID: 4561387183922915728}
   m_Layer: 0
   m_Name: Putting Player Origin (XR Rig)
   m_TagString: Untagged
@@ -1480,7 +1482,8 @@ MonoBehaviour:
   interactionManager: {fileID: 0}
   putterPrefab: {fileID: 3979418456399677145, guid: 186d962c7a61c3d4faf5803c94fd1c43,
     type: 3}
-  ballPrefab: {fileID: 0}
+  ballPrefab: {fileID: 3334206106426155426, guid: e9fc9f11a21c68441bf454631749078f,
+    type: 3}
   rDirectInteractor: {fileID: 1064257249552823133}
   lDirectInteractor: {fileID: 8290658809780321455}
   teleportInteractor: {fileID: 5064123469060282144}
@@ -1518,6 +1521,47 @@ MonoBehaviour:
       m_Action: Left Grip Pressed
       m_Flags: 0
     m_Flags: 0
+--- !u!143 &2620005093490609679
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672897108284228216}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.5
+  m_Radius: 0.1
+  m_SlopeLimit: 45
+  m_StepOffset: 0.25
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4561387183922915728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672897108284228216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6bf904e410ee8479f9093d8830d1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocomotionProvider: {fileID: 0}
+  m_MinHeight: 0
+  m_MaxHeight: Infinity
 --- !u!1 &6114492683897153011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,7 +2530,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1073741824
+    m_Bits: 1342177280
   m_AttachTransform: {fileID: 4634726004314760972}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
