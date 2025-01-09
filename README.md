@@ -63,26 +63,26 @@ This game is not play ready, see version 1.0 features for intended features and 
 - Mini Golf Ball Vending Machine.
 - Pushable VR buttons.
 - Golf ball mesh and seven unique colors.
+- Character collision. 
 
 #### Remaining Work 
-- 1: VR character controller and collision handling (see feature-character-controller for progress).
-- 2: Player body sockets.
-- 3: Game start sequence.
-- 4: Improved putting physics.
-- 5: Rework the start hole sequence.
-- 6: Ability to restart current hole.
-- 7: Ability to change the golf putter size through the hand menu interface.
-- 8: Make hand menu open with buttons instead of by gaze (looking at hand menu opens it as of now).
-- 9: Ability to choose between continuous rotation or snap rotation in the hand menu's options menu.
-- 10: Ability to choose between teleport and continuous locomotion in the hand menu's options menu.
-- 11: Ability to terminate application.
-- 12: Haptic feedback for mini golf events.
-- 13: Audio feedback for player interactions (hitting ball, selecting a ball from vending machine, etc).
-- 14: Audio for UI interaction.
-- 15: Audio for ambient noise.
-- 16: Design work for all holes in the game.
-- 17: Level design and production of 3D assets for the mini golf course.
-- 18: Additional 3D objects for golf interactables.
-- 19: Creation of Main Menu.
-- 20: Release of V1.0.
+- 1: Player body sockets.
+- 2: Game start sequence.
+- 3: Improved putting physics.
+- 4: Rework the start hole sequence.
+- 5: Ability to restart current hole.
+- 6: Ability to change the golf putter size through the hand menu interface.
+- 7: Make hand menu open with buttons instead of by gaze (looking at hand menu opens it as of now).
+- 8: Ability to choose between continuous rotation or snap rotation in the hand menu's options menu.
+- 9: Ability to choose between teleport and continuous locomotion in the hand menu's options menu.
+- 10: Ability to terminate application.
+- 11: Haptic feedback for mini golf events.
+- 12: Audio feedback for player interactions (hitting ball, selecting a ball from vending machine, etc).
+- 13: Audio for UI interaction.
+- 14: Audio for ambient noise.
+- 15: Design work for all holes in the game.
+- 16: Level design and production of 3D assets for the mini golf course.
+- 17: Additional 3D objects for golf interactables.
+- 18: Creation of Main Menu.
+- 19: Release of V1.0.
 
