@@ -1,8 +1,10 @@
 ## Minigolfer VR
 
 ### Overview
-This project was created by Elise Kidroske as her capstone project for the Unity Learn VR Course. This project is a Minigolf VR game where players can play an 18-hole minigolf course in VR. This implementation is single player only although multiplayer may be considered during a future release or as a separate project.
-This game is not play ready, see version 1.0 features for intended features and the roadmap section for where the project currently stands. This README file will be updated as progress is made. If you are a 3D artist or animator and would like to collaborate on this project, please feel free to reach out to me.
+This project is a Minigolf VR game where players can play an 18-hole minigolf course in VR.
+
+### Video Demonstration
+[Minigolf VR Demo](https://www.youtube.com/watch?v=48EAxHM-2cw)
 
 ### Intended Features for Version 1.0
 - Players can interact with objects in VR.
